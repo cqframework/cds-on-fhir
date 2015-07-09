@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="Basic-guidance"/>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Requests guidance using a specific knowledge module</h2>
+      <p>OPERATION: Requests guidance using a specific knowledge module</p>
+      <div>
+        <p>The guidance operation requests clinical decision support guidance based on a specific knowledge module</p>
+
+      </div>
+      <p>URL: [base]/$Requests guidance using a specific knowledge module</p>
+      <p>Parameters</p>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Use</b>
+          </td>
+          <td>
+            <b>Name</b>
+          </td>
+          <td>
+            <b>Cardinality</b>
+          </td>
+          <td>
+            <b>Type</b>
+          </td>
+          <td>
+            <b>Documentation</b>
+          </td>
+        </tr>
+        <tr>
+          <td>IN</td>
+          <td>request</td>
+          <td>1..*</td>
+          <td>Basic</td>
+          <td>
+            <div>
+              <p>The input guidance request information</p>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>IN</td>
+          <td>inputResource</td>
+          <td>0..*</td>
+          <td>DomainResource</td>
+          <td>
+            <div>
+              <p>Input data for the request(s)</p>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>OUT</td>
+          <td>response</td>
+          <td>1..*</td>
+          <td>Basic</td>
+          <td>
+            <div>
+              <p>The results of the request(s)</p>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>OUT</td>
+          <td>outputResource</td>
+          <td>0..*</td>
+          <td>DomainResource</td>
+          <td>
+            <div>
+              <p>Any output resources of the request(s)</p>
+
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <url value="http://hl7.org/fhir/OperationDefinition/Basic-guidance"/>
+  <name value="Requests guidance using a specific knowledge module"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <description value="The guidance operation requests clinical decision support guidance based on a specific knowledge module"/>
+  <status value="draft"/>
+  <date value="2015-06-26T09:54:28-06:00"/>
+  <kind value="operation"/>
+  <code value="guidance"/>
+  <system value="true"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="request"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="*"/>
+    <documentation value="The input guidance request information"/>
+    <type value="Basic"/>
+  </parameter>
+  <parameter>
+    <name value="inputResource"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Input data for the request(s)"/>
+    <type value="DomainResource"/>
+  </parameter>
+  <parameter>
+    <name value="response"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="*"/>
+    <documentation value="The results of the request(s)"/>
+    <type value="Basic"/>
+  </parameter>
+  <parameter>
+    <name value="outputResource"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Any output resources of the request(s)"/>
+    <type value="DomainResource"/>
+  </parameter>
+</OperationDefinition>
