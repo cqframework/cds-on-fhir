@@ -12,11 +12,18 @@ namespace GuidanceEngine
 {
 	public class Engine
 	{
+		/// <summary>
+		/// The resource directory for the simple store that is hosting this example engine.
+		/// </summary>
+		public string ResourceDirectory { get; set; }
+
 		public Parameters Guidance(Parameters input)
 		{
 			Parameters outputParameters = null;
-			using (var outputFile = GetType().Assembly.GetManifestResourceStream("GuidanceEngine.Examples.guidance-operation-response-example-v2.xml"))
-			//using (var outputFile = File.Open("bin\\Examples\\guidance-operation-response-example-v2.xml", FileMode.Open))
+			//var responseStreamName = String.Format("GuidanceEngine.Examples.{0}.xml", input.Id.Replace("request", "response"));
+			//using (var outputFile = GetType().Assembly.GetManifestResourceStream(responseFileName))
+			var responseFileName = Path.Combine(ResourceDirectory, "Parameters", String.Format("{0}.xml", input.Id.Replace("request", "response")));
+			using (var outputFile = File.Open(responseFileName, FileMode.Open))
 			{
 				using (var outputReader = XmlReader.Create(outputFile))
 				{

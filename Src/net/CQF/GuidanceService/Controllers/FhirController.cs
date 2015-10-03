@@ -26,6 +26,7 @@ using GuidanceEngine;
 using Spark.Engine.Core;
 using Spark.Engine.Extensions;
 using Spark.Configuration;
+using GuidanceService.Store;
 
 namespace Spark.Controllers
 {
@@ -39,6 +40,7 @@ namespace Spark.Controllers
         {
 			service = Infra.Simple.CreateService();
 			engine = new GuidanceEngine.Engine();
+			engine.ResourceDirectory = SimpleStore.GetBaseResourceDirectory();
         }
 
         [HttpGet, Route("{type}/{id}")]

@@ -154,9 +154,14 @@ namespace GuidanceService.Store
 			return results;
 		}
 
+		public static string GetBaseResourceDirectory()
+		{
+			return Path.Combine(HttpRuntime.BinDirectory, "Resources");
+		}
+
 		private string GetResourceDirectory(string typeName)
 		{
-			return Path.Combine(HttpRuntime.BinDirectory, "Resources", typeName);
+			return Path.Combine(GetBaseResourceDirectory(), typeName);
 		}
 
 		private string GetResourceFileName(IKey key)
