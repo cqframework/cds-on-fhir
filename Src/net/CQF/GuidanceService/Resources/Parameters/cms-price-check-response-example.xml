@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Parameters xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../schema/fhir-single.xsd">
+	<!-- This example demonstrates the response to a CMS Price Check CDS-Hooks call. -->
+	<id value="cms-price-check-response-example"/>
+	<parameter>
+		<name value="response"/>
+		<resource>
+			<!-- GuidanceResponse, profile of Basic -->
+			<Basic>
+				<id value="guidanceResponse1"/>
+				<meta>
+					<profile value="http://hl7.org/fhir/StructureDefinition/cqif-guidanceresponse"/>
+				</meta>
+				<text xmlns:xhtml="http://www.w3.org/1999/xhtml">
+					<status value="generated"/>
+					<xhtml:div>Citalopram 20 MG Oral Tablet, Cost: $11 Source: CMS Public Use Files</xhtml:div>
+				</text>
+				<extension url="http://hl7.org/fhir/StructureDefinition/cqif-basic-requestId">
+					<valueIdentifier>
+						<value value="cms-price-check-request-id"/>
+					</valueIdentifier>
+				</extension>
+				<extension url="http://hl7.org/fhir/StructureDefinition/cqif-basic-guidance-action">
+					<extension url="http://hl7.org/fhir/StructureDefinition/cqif-basic-guidance-action#type">
+						<!-- Introduce action types to represent CDS-Hooks cards -->
+						<valueCode value="information-card"/>
+					</extension>
+					<extension url="http://hl7.org/fhir/StructureDefinition/cqif-basic-guidance-action#description">
+						<valueString value="Citalopram 20 MG Oral Tablet, Cost: $11, Source: CMS Public Use Files"/>
+					</extension>
+				</extension>
+				<modifierExtension url="http://hl7.org/fhir/StructureDefinition/cqif-basic-module">
+					<valueReference>
+						<reference value="Basic/cms-price-check"/>
+					</valueReference>
+				</modifierExtension>
+				<modifierExtension url="http://hl7.org/fhir/StructureDefinition/cqif-basic-responseStatus">
+					<valueCode value="success"/>
+				</modifierExtension>
+				<code>
+					<coding>
+						<code value="response"/>
+					</coding>
+				</code>
+			</Basic>
+		</resource>
+	</parameter>
+</Parameters>

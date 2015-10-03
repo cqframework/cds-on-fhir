@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <OperationDefinition xmlns="http://hl7.org/fhir">
-  <id value="Basic-guidanceRequirements"/>
+  <id value="guidancerequest-cqif-guidance-requirements"/>
   <text>
     <status value="generated"/>
     <div xmlns="http://www.w3.org/1999/xhtml">
@@ -11,7 +11,7 @@
         <p>The guidance requirements operation determines the data requirements for a given module or set of modules</p>
 
       </div>
-      <p>URL: [base]/$guidanceRequirements</p>
+      <p>URL: [base]/$guidance-requirements</p>
       <p>Parameters</p>
       <table class="grid">
         <tr>
@@ -28,6 +28,9 @@
             <b>Type</b>
           </td>
           <td>
+            <b>Binding</b>
+          </td>
+          <td>
             <b>Documentation</b>
           </td>
         </tr>
@@ -36,6 +39,7 @@
           <td>moduleIdentifier</td>
           <td>0..*</td>
           <td>Identifier</td>
+          <td/>
           <td>
             <div>
               <p>The identifiers of the modules for which data requirements should be retrieved</p>
@@ -47,7 +51,8 @@
           <td>OUT</td>
           <td>result</td>
           <td>1..1</td>
-          <td>KnowledgeModule</td>
+          <td>Basic</td>
+          <td/>
           <td>
             <div>
               <p>The aggregated data requirements for the requested modules</p>
@@ -58,12 +63,14 @@
       </table>
     </div>
   </text>
-  <url value="http://hl7.org/fhir/OperationDefinition/Basic-guidanceRequirements"/>
+  <url value="http://hl7.org/fhir/OperationDefinition/guidancerequest-cqif-guidance-requirements"/>
   <name value="guidanceRequirements"/>
+  <status value="draft"/>
+  <kind value="operation"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
-      <system value="url"/>
+      <system value="other"/>
       <value value="http://hl7.org/fhir"/>
     </telecom>
     <telecom>
@@ -71,11 +78,9 @@
       <value value="fhir@lists.hl7.org"/>
     </telecom>
   </contact>
+  <date value="2015-09-07T11:52:14-06:00"/>
   <description value="The guidance requirements operation determines the data requirements for a given module or set of modules"/>
-  <status value="draft"/>
-  <date value="2015-06-26T10:24:33-06:00"/>
-  <kind value="operation"/>
-  <code value="guidanceRequirements"/>
+  <code value="guidance-requirements"/>
   <system value="true"/>
   <instance value="false"/>
   <parameter>
@@ -92,6 +97,9 @@
     <min value="1"/>
     <max value="1"/>
     <documentation value="The aggregated data requirements for the requested modules"/>
-    <type value="KnowledgeModule"/>
+    <type value="Basic"/>
+    <profile>
+      <reference value="http://hl7.org/fhir/StructureDefinition/cqif-knowledgemodule"/>
+    </profile>
   </parameter>
 </OperationDefinition>

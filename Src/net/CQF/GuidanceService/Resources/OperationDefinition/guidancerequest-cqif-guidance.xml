@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <OperationDefinition xmlns="http://hl7.org/fhir">
-  <id value="Basic-guidance"/>
+  <id value="guidancerequest-cqif-guidance"/>
   <text>
     <status value="generated"/>
     <div xmlns="http://www.w3.org/1999/xhtml">
-      <h2>Requests guidance using a specific knowledge module</h2>
-      <p>OPERATION: Requests guidance using a specific knowledge module</p>
+      <h2>guidance</h2>
+      <p>OPERATION: guidance</p>
       <div>
         <p>The guidance operation requests clinical decision support guidance based on a specific knowledge module</p>
 
       </div>
-      <p>URL: [base]/$Requests guidance using a specific knowledge module</p>
+      <p>URL: [base]/$guidance</p>
       <p>Parameters</p>
       <table class="grid">
         <tr>
@@ -28,6 +28,9 @@
             <b>Type</b>
           </td>
           <td>
+            <b>Binding</b>
+          </td>
+          <td>
             <b>Documentation</b>
           </td>
         </tr>
@@ -36,6 +39,7 @@
           <td>request</td>
           <td>1..*</td>
           <td>Basic</td>
+          <td/>
           <td>
             <div>
               <p>The input guidance request information</p>
@@ -48,6 +52,7 @@
           <td>inputResource</td>
           <td>0..*</td>
           <td>DomainResource</td>
+          <td/>
           <td>
             <div>
               <p>Input data for the request(s)</p>
@@ -60,6 +65,7 @@
           <td>response</td>
           <td>1..*</td>
           <td>Basic</td>
+          <td/>
           <td>
             <div>
               <p>The results of the request(s)</p>
@@ -72,6 +78,7 @@
           <td>outputResource</td>
           <td>0..*</td>
           <td>DomainResource</td>
+          <td/>
           <td>
             <div>
               <p>Any output resources of the request(s)</p>
@@ -82,12 +89,14 @@
       </table>
     </div>
   </text>
-  <url value="http://hl7.org/fhir/OperationDefinition/Basic-guidance"/>
-  <name value="Requests guidance using a specific knowledge module"/>
+  <url value="http://hl7.org/fhir/OperationDefinition/guidancerequest-cqif-guidance"/>
+  <name value="guidance"/>
+  <status value="draft"/>
+  <kind value="operation"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
-      <system value="url"/>
+      <system value="other"/>
       <value value="http://hl7.org/fhir"/>
     </telecom>
     <telecom>
@@ -95,10 +104,8 @@
       <value value="fhir@lists.hl7.org"/>
     </telecom>
   </contact>
+  <date value="2015-09-07T11:52:14-06:00"/>
   <description value="The guidance operation requests clinical decision support guidance based on a specific knowledge module"/>
-  <status value="draft"/>
-  <date value="2015-06-26T09:54:28-06:00"/>
-  <kind value="operation"/>
   <code value="guidance"/>
   <system value="true"/>
   <instance value="false"/>
@@ -109,6 +116,9 @@
     <max value="*"/>
     <documentation value="The input guidance request information"/>
     <type value="Basic"/>
+    <profile>
+      <reference value="http://hl7.org/fhir/StructureDefinition/cqif-guidancerequest"/>
+    </profile>
   </parameter>
   <parameter>
     <name value="inputResource"/>
@@ -125,6 +135,9 @@
     <max value="*"/>
     <documentation value="The results of the request(s)"/>
     <type value="Basic"/>
+    <profile>
+      <reference value="http://hl7.org/fhir/StructureDefinition/cqif-guidanceresponse"/>
+    </profile>
   </parameter>
   <parameter>
     <name value="outputResource"/>

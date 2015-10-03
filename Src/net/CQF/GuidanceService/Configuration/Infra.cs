@@ -13,7 +13,7 @@ namespace Spark.App
     {
         static Infra()
         {
-            Infra.Simple = new Infrastructure().AddLocalhost(Settings.GuidanceEndpoint).AddSimpleStore();
+            Infra.Simple = Infrastructure.Default().AddLocalhost(Settings.GuidanceEndpoint).AddSimpleStore();
         }
 
         // Use as: FhirService service = Infra.Simple.CreateService()

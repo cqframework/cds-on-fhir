@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Basic xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../schema/fhir-single.xsd">
+	<!-- This example demonstrates the use of the KnowledgeModule structure to represent a CDS-Hooks Activity -->
+	<id value="cms-price-check"/>
+	<meta>
+		<profile value="http://hl7.org/fhir/StructureDefinition/cqif-knowledgemodule"/>
+	</meta>
+	<text>
+		<status value="generated"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">CMS Price Check - CDS Hooks Example Activity</div>
+	</text>
+	<!-- Version -->
+	<extension url="http://hl7.org/fhir/StructureDefinition/cqif-basic-moduleVersion">
+		<valueString value="1.0.0"/>
+	</extension>
+	<!-- Title -->
+	<extension url="http://hl7.org/fhir/StructureDefinition/cqif-basic-title">
+		<valueCode value="CMS Price Check"/>
+	</extension>
+	<!-- Description -->
+	<extension url="http://hl7.org/fhir/StructureDefinition/cqif-basic-description">
+		<valueString value="The CMS Price Check activity defines a knowledge module for use as an activity in a CDS-Hooks implementation."/>
+	</extension>
+	<!-- PublicationDate -->
+	<extension url="http://hl7.org/fhir/StructureDefinition/cqif-basic-publicationDate">
+		<valueDate value="2015-10-02"/>
+	</extension>
+	<!-- Topic -->
+	<extension url="http://hl7.org/fhir/StructureDefinition/cqif-basic-topic">
+		<valueCodeableConcept>
+			<text value="CMS Price Check"/>
+		</valueCodeableConcept>
+	</extension>
+	<!-- Keyword -->
+	<extension url="http://hl7.org/fhir/StructureDefinition/cqif-basic-keyword">
+		<valueString value="CMS Price Check"/>
+	</extension>
+	<!-- MedicationOrder Data Requirement -->
+	<extension url="http://hl7.org/fhir/StructureDefinition/cqif-basic-data">
+		<extension url="http://hl7.org/fhir/StructureDefinition/cqif-basic-data#type">
+			<valueCode value="MedicationOrder"/>
+		</extension>
+	</extension>
+	<!-- Trigger -->
+	<extension url="http://hl7.org/fhir/StructureDefinition/cqif-basic-guidance-trigger">
+		<extension url="http://hl7.org/fhir/StructureDefinition/cqif-basic-guidance-trigger#type">
+			<valueCode value="named-event"/>
+		</extension>
+		<extension url="http://hl7.org/fhir/StructureDefinition/cqif-basic-guidance-trigger#eventName">
+			<valueString value="medication-prescribe"/>
+		</extension>
+	</extension>
+	<!-- Status -->
+	<modifierExtension url="http://hl7.org/fhir/StructureDefinition/cqif-basic-moduleStatus">
+		<valueCode value="draft"/>
+	</modifierExtension>
+	<!-- Evaluation Supported -->
+	<modifierExtension url="http://hl7.org/fhir/StructureDefinition/cqif-basic-evaluationSupported">
+		<valueBoolean value="true"/>
+	</modifierExtension>
+	<!-- Identifier -->
+	<identifier>
+		<use value="official"/>
+		<value value="cms-price-check-activity"/>
+	</identifier>
+	<!-- Code -->
+	<code>
+		<coding>
+			<code value="module"/>
+		</coding>
+	</code>
+</Basic>
+

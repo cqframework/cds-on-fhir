@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using Spark.Core;
+using Spark.Engine.Extensions;
 
 namespace GuidanceService
 {

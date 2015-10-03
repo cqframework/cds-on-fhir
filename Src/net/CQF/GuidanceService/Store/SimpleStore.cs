@@ -7,11 +7,15 @@ using System.Xml;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 using Spark.Core;
+using Spark.Engine.Core;
+using Spark.Search;
 
 namespace GuidanceService.Store
 {
 	public class SimpleStore : IFhirStore, IGenerator, ISnapshotStore, IFhirIndex
 	{
+		private ISnapshotCache _snapshots = new SimpleSnapshotCache();
+
 		public void Add(IEnumerable<Interaction> entries)
 		{
 			foreach (var entry in entries)
@@ -45,12 +49,13 @@ namespace GuidanceService.Store
 
 		public IList<Interaction> Get(IEnumerable<string> identifiers, string sortby)
 		{
-			throw new NotImplementedException();
+			return (from i in identifiers select Get(i)).ToList();
 		}
 
 		public Interaction Get(string primarykey)
 		{
-			throw new NotImplementedException();
+			var key = Key.Create(Path.GetDirectoryName(primarykey), Path.GetFileName(primarykey));
+			return Get(key);
 		}
 
 		public Interaction Get(IKey key)
@@ -85,7 +90,7 @@ namespace GuidanceService.Store
 		{
 			var resourceDirectory = GetResourceDirectory(typename);
 
-			return (from f in Directory.EnumerateFiles(resourceDirectory, "*.xml") select Path.GetFileNameWithoutExtension(f)).ToList();
+			return (from f in Directory.EnumerateFiles(resourceDirectory, "*.xml") select Path.Combine(typename, Path.GetFileNameWithoutExtension(f))).ToList();
 		}
 
 		public void Replace(Interaction entry)
@@ -110,14 +115,13 @@ namespace GuidanceService.Store
 
 		public void AddSnapshot(Snapshot snapshot)
 		{
-			throw new NotImplementedException();
+			_snapshots.Add(snapshot);
 		}
 
 		public Snapshot GetSnapshot(string snapshotid)
 		{
-			throw new NotImplementedException();
+			return _snapshots.Get(snapshotid);
 		}
-
 
 		public Key FindSingle(string resource, Hl7.Fhir.Rest.SearchParams searchCommand)
 		{
@@ -136,7 +140,18 @@ namespace GuidanceService.Store
 
 		public SearchResults Search(string resource, Hl7.Fhir.Rest.SearchParams searchCommand)
 		{
-			throw new NotImplementedException();
+			var results = new SearchResults();
+			if ((searchCommand.Query == null) && (searchCommand.Parameters == null || !searchCommand.Parameters.Any()) && (string.IsNullOrEmpty(searchCommand.Filter)))
+			{
+				// This is a full get, return all resources
+				results.AddRange(List(resource));
+				results.UsedCriteria = new List<Criterium>();
+			}
+			else
+			{
+				results.AddIssue("Unimplemented search request.", OperationOutcome.IssueSeverity.Error);
+			}
+			return results;
 		}
 
 		private string GetResourceDirectory(string typeName)
@@ -148,10 +163,15 @@ namespace GuidanceService.Store
 		{
 			switch (key.TypeName)
 			{
-				case "OperationDefinition": return Path.Combine(GetResourceDirectory(key.TypeName), String.Format("operation-{0}.xml", key.ResourceId.ToLower()));
-				case "StructureDefinition": return Path.Combine(GetResourceDirectory(key.TypeName), String.Format("{0}.profile.xml", key.ResourceId.ToLower()));
+				//case "OperationDefinition": return Path.Combine(GetResourceDirectory(key.TypeName), String.Format("operation-{0}.xml", key.ResourceId.ToLower()));
+				//case "StructureDefinition": return Path.Combine(GetResourceDirectory(key.TypeName), String.Format("{0}.profile.xml", key.ResourceId.ToLower()));
 				default: return Path.Combine(GetResourceDirectory(key.TypeName), Path.ChangeExtension(key.ResourceId, "xml"));
 			}
+		}
+
+		private string GetResourceIdFromFileName(string typeName, string fileName)
+		{
+			return Path.GetFileNameWithoutExtension(fileName);
 		}
 
 		private Resource LoadResourceFromXmlFile(IKey key)

@@ -18,12 +18,14 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Spark.Core;
 using Spark.Service;
-using Spark.Config;
 using Hl7.Fhir.Rest;
 using Hl7.Fhir.Model;
 using Spark.App;
 using Hl7.Fhir.Serialization;
 using GuidanceEngine;
+using Spark.Engine.Core;
+using Spark.Engine.Extensions;
+using Spark.Configuration;
 
 namespace Spark.Controllers
 {
@@ -31,12 +33,12 @@ namespace Spark.Controllers
     public class FhirController : ApiController
     {
         FhirService service; 
-		Engine engine;
+		GuidanceEngine.Engine engine;
 
         public FhirController()
         {
 			service = Infra.Simple.CreateService();
-			engine = new Engine();
+			engine = new GuidanceEngine.Engine();
         }
 
         [HttpGet, Route("{type}/{id}")]
@@ -162,12 +164,12 @@ namespace Spark.Controllers
             return service.Transaction(bundle);
         }
 
-        [HttpPost, Route("Mailbox")]
-        public FhirResponse Mailbox(Bundle document)
-        {
-            Binary b = Request.GetBody();
-            return service.Mailbox(document, b);
-        }
+        //[HttpPost, Route("Mailbox")]
+        //public FhirResponse Mailbox(Bundle document)
+        //{
+        //    Binary b = Request.GetBody();
+        //    return service.Mailbox(document, b);
+        //}
         
         [HttpGet, Route("_history")]
         public FhirResponse History()

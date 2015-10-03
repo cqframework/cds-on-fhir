@@ -1,56 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="guidancerequest-cqf-cqf-guidancerequest"/>
+  <id value="cqif-guidanceresponse"/>
   <text>
     <status value="generated"/>
     <div xmlns="http://www.w3.org/1999/xhtml">to do</div>
   </text>
-  <url value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-cqf-guidancerequest"/>
-  <name value="CQF-GuidanceRequest"/>
+  <url value="http://hl7.org/fhir/StructureDefinition/cqif-guidanceresponse"/>
+  <name value="CQIF-GuidanceResponse"/>
+  <status value="draft"/>
   <publisher value="Health Level Seven, Inc. - CDS WG"/>
   <contact>
     <telecom>
-      <system value="url"/>
+      <system value="other"/>
       <value value="http://hl7.org/special/committees/dss"/>
     </telecom>
   </contact>
-  <description value="A request for decision support guidance"/>
-  <status value="draft"/>
-  <date value="2014-01-31"/>
-  <type value="constraint"/>
+  <date value="2015-05-30"/>
+  <description value="The formal response to a guidance request"/>
+  <fhirVersion value="1.0.0"/>
+  <kind value="resource"/>
+  <constrainedType value="Basic"/>
   <abstract value="false"/>
   <base value="http://hl7.org/fhir/StructureDefinition/Basic"/>
   <snapshot>
     <element>
       <path value="Basic"/>
-      <name value="CQF-GuidanceRequest"/>
-      <short value="A request for decision support guidance"/>
-      <definition value="A guidance request is a derivative of a knowledge request specifically focused on the decision support use case, providing information relevant to decision support such as workflow and user context."/>
-      <requirements value="Need some way to safely (without breaking interoperability) allow implementers to exchange content not supported by the initial set of declared resources."/>
+      <name value="CQIF-GuidanceResponse"/>
+      <short value="The formal response to a guidance request"/>
+      <definition value="A guidance response is the formal response to a previous guidance request. It is a derivative of the knowledge response that provides additional information relevant specifically to clinical decision support such as a description of any proposed actions to be taken."/>
       <alias value="Z-resource"/>
       <alias value="Extension-resource"/>
       <alias value="Custom-resource"/>
-      <min value="1"/>
-      <max value="1"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Basic"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
       <type>
         <code value="Basic"/>
       </type>
+      <isSummary value="true"/>
       <mapping>
         <identity value="rim"/>
         <map value="Act, Entity or Role"/>
       </mapping>
+      <mapping>
+        <identity value="w5"/>
+        <map value="infrastructure.structure"/>
+      </mapping>
     </element>
     <element>
       <path value="Basic.id"/>
-      <short value="Logical id of this artefact"/>
-      <definition value="The logical id of the resource, as used in the url for the resoure. Once assigned, this value never changes."/>
+      <short value="Logical id of this artifact"/>
+      <definition value="The logical id of the resource, as used in the url for the resource. Once assigned, this value never changes."/>
       <comments value="The only time that a resource does not have an id is when it is being submitted to the server using a create operation. Bundles always have an id, though it is usually a generated UUID."/>
       <min value="0"/>
       <max value="1"/>
+      <base>
+        <path value="Basic.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
       <type>
         <code value="id"/>
       </type>
+      <isSummary value="true"/>
     </element>
     <element>
       <path value="Basic.meta"/>
@@ -58,9 +75,15 @@
       <definition value="The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content may not always be associated with version changes to the resource."/>
       <min value="0"/>
       <max value="1"/>
+      <base>
+        <path value="Basic.meta"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
       <type>
         <code value="Meta"/>
       </type>
+      <isSummary value="true"/>
     </element>
     <element>
       <path value="Basic.implicitRules"/>
@@ -69,25 +92,33 @@
       <comments value="Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element as much as possible."/>
       <min value="0"/>
       <max value="1"/>
+      <base>
+        <path value="Basic.implicitRules"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
       <type>
         <code value="uri"/>
       </type>
       <isModifier value="true"/>
+      <isSummary value="true"/>
     </element>
     <element>
       <path value="Basic.language"/>
       <short value="Language of the resource content"/>
       <definition value="The base language in which the resource is written."/>
-      <comments value="Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource
-
-Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute)."/>
+      <comments value="Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource  Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute)."/>
       <min value="0"/>
       <max value="1"/>
+      <base>
+        <path value="Basic.language"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
       <type>
         <code value="code"/>
       </type>
       <binding>
-        <name value="Language"/>
         <strength value="required"/>
         <description value="A human language"/>
         <valueSetUri value="http://tools.ietf.org/html/bcp47"/>
@@ -104,6 +135,11 @@ Not all the content has to be in the base language. The Resource.language should
       <alias value="display"/>
       <min value="0"/>
       <max value="1"/>
+      <base>
+        <path value="Basic.text"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
       <type>
         <code value="Narrative"/>
       </type>
@@ -123,6 +159,11 @@ Not all the content has to be in the base language. The Resource.language should
       <alias value="contained resources"/>
       <min value="0"/>
       <max value="*"/>
+      <base>
+        <path value="Basic.contained"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
       <type>
         <code value="Resource"/>
       </type>
@@ -138,144 +179,58 @@ Not all the content has to be in the base language. The Resource.language should
         <ordered value="false"/>
         <rules value="open"/>
       </slicing>
+      <short value="Additional Content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comments value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Basic.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
+    </element>
+    <element>
+      <path value="Basic.extension"/>
+      <name value="outputParameters"/>
       <short value="Extension"/>
       <definition value="An Extension"/>
       <min value="0"/>
       <max value="*"/>
+      <base>
+        <path value="Basic.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
       <type>
         <code value="Extension"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-outputParameters"/>
       </type>
     </element>
     <element>
       <path value="Basic.extension"/>
-      <name value="GuidanceRequest-initiatingOrganization"/>
+      <name value="action"/>
       <short value="Extension"/>
       <definition value="An Extension"/>
       <min value="0"/>
-      <max value="1"/>
+      <max value="*"/>
+      <base>
+        <path value="Basic.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
       <type>
         <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-initiatingOrganization"/>
-      </type>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-initiatingPerson"/>
-      <short value="Extension"/>
-      <definition value="An Extension"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-initiatingPerson"/>
-      </type>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-systemUserType"/>
-      <short value="Extension"/>
-      <definition value="An Extension"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-systemUserType"/>
-      </type>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-systemUserLanguage"/>
-      <short value="Extension"/>
-      <definition value="An Extension"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-systemUserLanguage"/>
-      </type>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-systemUserTaskContext"/>
-      <short value="Extension"/>
-      <definition value="An Extension"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-systemUserTaskContext"/>
-      </type>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-receivingOrganization"/>
-      <short value="Extension"/>
-      <definition value="An Extension"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-receivingOrganization"/>
-      </type>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-receivingPerson"/>
-      <short value="Extension"/>
-      <definition value="An Extension"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-receivingPerson"/>
-      </type>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-recipientType"/>
-      <short value="Extension"/>
-      <definition value="An Extension"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-recipientType"/>
-      </type>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-recipientLanguage"/>
-      <short value="Extension"/>
-      <definition value="An Extension"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-recipientLanguage"/>
-      </type>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-encounterClass"/>
-      <short value="Extension"/>
-      <definition value="An Extension"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-encounterClass"/>
-      </type>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-encounterType"/>
-      <short value="Extension"/>
-      <definition value="An Extension"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-encounterType"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-guidance-action"/>
       </type>
     </element>
     <element>
@@ -287,6 +242,11 @@ Not all the content has to be in the base language. The Resource.language should
       <alias value="user content"/>
       <min value="0"/>
       <max value="*"/>
+      <base>
+        <path value="Basic.modifierExtension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
       <type>
         <code value="Extension"/>
       </type>
@@ -302,12 +262,22 @@ Not all the content has to be in the base language. The Resource.language should
       <definition value="Identifier assigned to the resource for business purposes, outside the context of FHIR."/>
       <min value="0"/>
       <max value="*"/>
+      <base>
+        <path value="Basic.identifier"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
       <type>
         <code value="Identifier"/>
       </type>
+      <isSummary value="true"/>
       <mapping>
         <identity value="rim"/>
         <map value="./identifier"/>
+      </mapping>
+      <mapping>
+        <identity value="w5"/>
+        <map value="id"/>
       </mapping>
     </element>
     <element>
@@ -318,38 +288,57 @@ Not all the content has to be in the base language. The Resource.language should
       <requirements value="Must be able to distinguish different types of &quot;basic&quot; resources."/>
       <min value="1"/>
       <max value="1"/>
+      <base>
+        <path value="Basic.code"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
       <type>
         <code value="CodeableConcept"/>
       </type>
       <isModifier value="true"/>
+      <isSummary value="true"/>
       <binding>
-        <name value="BasicResourceType"/>
         <strength value="example"/>
         <description value="Codes for identifying types of resources not yet defined by FHIR"/>
         <valueSetReference>
-          <reference value="http://hl7.org/fhir/vs/basic-resource-type"/>
+          <reference value="http://hl7.org/fhir/ValueSet/basic-resource-type"/>
         </valueSetReference>
       </binding>
       <mapping>
         <identity value="rim"/>
         <map value="./code"/>
       </mapping>
+      <mapping>
+        <identity value="w5"/>
+        <map value="what"/>
+      </mapping>
     </element>
     <element>
       <path value="Basic.subject"/>
-      <short value="Identifies the"/>
+      <short value="Identifies the focus of this resource"/>
       <definition value="Identifies the patient, practitioner, device or any other resource that is the &quot;focus&quot; of this resoruce."/>
       <comments value="Optional as not all resources potential resources will have subjects.  Resources associated with multiple subjects can handle this via extension."/>
       <requirements value="Needed for partitioning the resource by Patient."/>
       <min value="0"/>
       <max value="1"/>
+      <base>
+        <path value="Basic.subject"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
       <type>
         <code value="Reference"/>
         <profile value="http://hl7.org/fhir/StructureDefinition/Resource"/>
       </type>
+      <isSummary value="true"/>
       <mapping>
         <identity value="rim"/>
         <map value="./participation[typeCode=&#39;SBJ&#39;] (possibly through a ControlAct and Role)"/>
+      </mapping>
+      <mapping>
+        <identity value="w5"/>
+        <map value="who.focus"/>
       </mapping>
     </element>
     <element>
@@ -359,6 +348,11 @@ Not all the content has to be in the base language. The Resource.language should
       <requirements value="Needed for partitioning the resource."/>
       <min value="0"/>
       <max value="1"/>
+      <base>
+        <path value="Basic.author"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
       <type>
         <code value="Reference"/>
         <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner"/>
@@ -371,9 +365,14 @@ Not all the content has to be in the base language. The Resource.language should
         <code value="Reference"/>
         <profile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson"/>
       </type>
+      <isSummary value="true"/>
       <mapping>
         <identity value="rim"/>
         <map value="./participation[typeCode=&#39;SUB&#39;] (possibly through a ControlAct and Role)"/>
+      </mapping>
+      <mapping>
+        <identity value="w5"/>
+        <map value="who.author"/>
       </mapping>
     </element>
     <element>
@@ -383,143 +382,56 @@ Not all the content has to be in the base language. The Resource.language should
       <requirements value="Allows ordering resource instances by time."/>
       <min value="0"/>
       <max value="1"/>
+      <base>
+        <path value="Basic.created"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
       <type>
         <code value="date"/>
       </type>
+      <isSummary value="true"/>
       <mapping>
         <identity value="rim"/>
         <map value="./participation[typeCode=&#39;AUT&#39;]/time (possibly through a ControlAct and Role)"/>
+      </mapping>
+      <mapping>
+        <identity value="w5"/>
+        <map value="when.recorded"/>
       </mapping>
     </element>
   </snapshot>
   <differential>
     <element>
       <path value="Basic"/>
-      <name value="CQF-GuidanceRequest"/>
-      <short value="A request for decision support guidance"/>
-      <definition value="A guidance request is a derivative of a knowledge request specifically focused on the decision support use case, providing information relevant to decision support such as workflow and user context."/>
-      <min value="1"/>
-      <max value="1"/>
+      <name value="CQIF-GuidanceResponse"/>
+      <short value="The formal response to a guidance request"/>
+      <definition value="A guidance response is the formal response to a previous guidance request. It is a derivative of the knowledge response that provides additional information relevant specifically to clinical decision support such as a description of any proposed actions to be taken."/>
+      <min value="0"/>
+      <max value="*"/>
       <type>
         <code value="Basic"/>
       </type>
     </element>
     <element>
       <path value="Basic.extension"/>
+      <name value="outputParameters"/>
       <slicing>
         <discriminator value="url"/>
         <ordered value="false"/>
         <rules value="open"/>
       </slicing>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-initiatingOrganization"/>
-      <min value="0"/>
-      <max value="1"/>
       <type>
         <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-initiatingOrganization"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-outputParameters"/>
       </type>
     </element>
     <element>
       <path value="Basic.extension"/>
-      <name value="GuidanceRequest-initiatingPerson"/>
-      <min value="0"/>
-      <max value="1"/>
+      <name value="action"/>
       <type>
         <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-initiatingPerson"/>
-      </type>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-systemUserType"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-systemUserType"/>
-      </type>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-systemUserLanguage"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-systemUserLanguage"/>
-      </type>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-systemUserTaskContext"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-systemUserTaskContext"/>
-      </type>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-receivingOrganization"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-receivingOrganization"/>
-      </type>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-receivingPerson"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-receivingPerson"/>
-      </type>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-recipientType"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-recipientType"/>
-      </type>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-recipientLanguage"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-recipientLanguage"/>
-      </type>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-encounterClass"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-encounterClass"/>
-      </type>
-    </element>
-    <element>
-      <path value="Basic.extension"/>
-      <name value="GuidanceRequest-encounterType"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/guidancerequest-cqf-encounterType"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-guidance-action"/>
       </type>
     </element>
   </differential>
