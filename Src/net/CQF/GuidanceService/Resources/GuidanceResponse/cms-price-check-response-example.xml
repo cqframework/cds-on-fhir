@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<GuidanceResponse xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../schema/fhir-single.xsd">
+	<id value="cms-price-check-response-example"/>
+	<text xmlns:xhtml="http://www.w3.org/1999/xhtml">
+		<status value="generated"/>
+		<xhtml:div>Citalopram 20 MG Oral Tablet, Cost: $11 Source: CMS Public Use Files</xhtml:div>
+	</text>
+	<contained>
+		<Parameters>
+			<parameter>
+				<name value="card"/>
+				<part>
+					<name value="summary"/>
+					<valueString value="Cost: $11"/>
+				</part>
+				<part>
+					<name value="source"/>
+					<valueString value="CMS Public Use Files"/>
+				</part>
+				<part>
+					<name value="indicator"/>
+					<valueString value="info"/>
+				</part>
+			</parameter>
+		</Parameters>
+	</contained>
+	<module>
+		<reference value="DecisionSupportServiceModule/cms-price-check"/>
+	</module>
+	<status value="success"/>
+	<outputParameters>
+		<reference value="#outputParameters1"/>
+	</outputParameters>
+</GuidanceResponse>

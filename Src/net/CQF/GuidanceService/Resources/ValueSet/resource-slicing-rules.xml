@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="resource-slicing-rules"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>SlicingRules</h2>
+      <p>How slices are interpreted when evaluating an instance.</p>
+      <p>This value set has an inline code system http://hl7.org/fhir/resource-slicing-rules, which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>closed
+            <a name="closed"> </a>
+          </td>
+          <td>Closed</td>
+          <td>No additional content is allowed other than that described by the slices in this profile.</td>
+        </tr>
+        <tr>
+          <td>open
+            <a name="open"> </a>
+          </td>
+          <td>Open</td>
+          <td>Additional content is allowed anywhere in the list.</td>
+        </tr>
+        <tr>
+          <td>openAtEnd
+            <a name="openAtEnd"> </a>
+          </td>
+          <td>Open at End</td>
+          <td>Additional content is allowed, but only at the end of the list. Note that using this requires that the slices be ordered, which makes it hard to share uses. This should only be done where absolutely required.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.45"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/resource-slicing-rules"/>
+  <version value="1.1.0"/>
+  <name value="SlicingRules"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="How slices are interpreted when evaluating an instance."/>
+  <codeSystem>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+      <valueUri value="urn:oid:2.16.840.1.113883.4.642.1.45"/>
+    </extension>
+    <system value="http://hl7.org/fhir/resource-slicing-rules"/>
+    <version value="1.1.0"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="closed"/>
+      <display value="Closed"/>
+      <definition value="No additional content is allowed other than that described by the slices in this profile."/>
+    </concept>
+    <concept>
+      <code value="open"/>
+      <display value="Open"/>
+      <definition value="Additional content is allowed anywhere in the list."/>
+    </concept>
+    <concept>
+      <code value="openAtEnd"/>
+      <display value="Open at End"/>
+      <definition value="Additional content is allowed, but only at the end of the list. Note that using this requires that the slices be ordered, which makes it hard to share uses. This should only be done where absolutely required."/>
+    </concept>
+  </codeSystem>
+</ValueSet>

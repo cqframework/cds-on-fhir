@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GuidanceResponse xmlns="http://hl7.org/fhir" xmlns:ns2="http://www.w3.org/1999/xhtml">
+	<id value="ecrs-hello-world-response"/>
+	<contained>
+		<Parameters>
+			<id value="outputParameters1"/>
+			<parameter>
+				<name value="Data"/>
+				<valueString value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;Recommendation xmlns:ns2=&quot;urn:hl7-org:v3&quot; xmlns:ns3=&quot;urn:partners-org:ecrs:actions&quot; xmlns:ns4=&quot;urn:partners-org:pf:patient&quot;&gt;&lt;ID root=&quot;87575938-d30e-4cd3-999b-349ef1017d35&quot; assigningAuthorityName=&quot;Partners HealthCare System&quot;/&gt;&lt;RecommendationTime value=&quot;2016-01-05 13:35:25:247&quot;/&gt;&lt;RuleApp&gt;/HelloWorldRuleApp/HelloWorldRules&lt;/RuleApp&gt;&lt;PatientID root=&quot;1.3.6.1.4.1.16517&quot; extension=&quot;ECRSTEST100091071&quot;/&gt;&lt;Action&gt;&lt;ID root=&quot;45388109-45df-4982-9191-148b4df8b875&quot;/&gt;&lt;ns3:RuleInfo&gt;&lt;guidelineCode code=&quot;-not defined-&quot;/&gt;&lt;originatorRuleset code=&quot;Top_Level_Rule_Package.Rule_Package_Level_2&quot;/&gt;&lt;originatorRule code=&quot;Top_Level_Rule_Package.Rule_Package_Level_2.Hello_World&quot;/&gt;&lt;ruleVersion value=&quot;1.0&quot;/&gt;&lt;/ns3:RuleInfo&gt;&lt;ActionTime value=&quot;2016-01-05 13:35:37:604&quot;/&gt;&lt;RequestList Mode=&quot;new&quot; Operation=&quot;and&quot; Ordered=&quot;true&quot;&gt;&lt;MessageRequest&gt;&lt;ns3:Message&gt;&lt;freeTextMessage value=&quot;Hello from ECRS&quot;/&gt;&lt;displayText&gt;Hello from ECRS&lt;/displayText&gt;&lt;/ns3:Message&gt;&lt;displayOrderEnforced&gt;false&lt;/displayOrderEnforced&gt;&lt;target code=&quot;12345&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot;/&gt;&lt;/MessageRequest&gt;&lt;KnowledgeAssetRequest&gt;&lt;resource&gt;&lt;title&gt;See ECRS Dev Guide&lt;/title&gt;&lt;identifier&gt;&lt;identifier&gt;the link will be here&lt;/identifier&gt;&lt;identifierType&gt;URL&lt;/identifierType&gt;&lt;/identifier&gt;&lt;knowledgeResourceType code=&quot;12345&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot;/&gt;&lt;/resource&gt;&lt;textAlternative&gt;See ECRS Dev Guide&lt;/textAlternative&gt;&lt;/KnowledgeAssetRequest&gt;&lt;/RequestList&gt;&lt;/Action&gt;&lt;BOP&gt;HelloWorld&lt;/BOP&gt;&lt;/Recommendation&gt;"/>
+			</parameter>
+		</Parameters>
+	</contained>
+	<status value="success"/>
+	<outputParameters>
+		<reference value="#outputParameters1"/>
+	</outputParameters>
+</GuidanceResponse>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="content-type"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>ContentType</h2>
+      <p>The content or mime type.
+        <br/>
+        <br/>The content type or mime type to be specified in Accept or Content-Type header.
+      </p>
+      <p>This value set has an inline code system http://hl7.org/fhir/content-type, which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>xml
+            <a name="xml"> </a>
+          </td>
+          <td>xml</td>
+          <td>XML content-type corresponding to the application/xml+fhir mime-type.</td>
+        </tr>
+        <tr>
+          <td>json
+            <a name="json"> </a>
+          </td>
+          <td>json</td>
+          <td>JSON content-type corresponding to the application/json+fhir mime-type.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.358"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/content-type"/>
+  <version value="1.1.0"/>
+  <name value="ContentType"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="The content or mime type.
+
+The content type or mime type to be specified in Accept or Content-Type header."/>
+  <codeSystem>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+      <valueUri value="urn:oid:2.16.840.1.113883.4.642.1.358"/>
+    </extension>
+    <system value="http://hl7.org/fhir/content-type"/>
+    <version value="1.1.0"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="xml"/>
+      <display value="xml"/>
+      <definition value="XML content-type corresponding to the application/xml+fhir mime-type."/>
+    </concept>
+    <concept>
+      <code value="json"/>
+      <display value="json"/>
+      <definition value="JSON content-type corresponding to the application/json+fhir mime-type."/>
+    </concept>
+  </codeSystem>
+</ValueSet>

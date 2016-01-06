@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="reaction-event-certainty"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>AllergyIntoleranceCertainty</h2>
+      <p>Statement about the degree of clinical certainty that a Specific Substance was the cause of the Manifestation in an reaction event.</p>
+      <p>This value set has an inline code system http://hl7.org/fhir/reaction-event-certainty, which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>unlikely
+            <a name="unlikely"> </a>
+          </td>
+          <td>Unlikely</td>
+          <td>There is a low level of clinical certainty that the reaction was caused by the identified Substance.</td>
+        </tr>
+        <tr>
+          <td>likely
+            <a name="likely"> </a>
+          </td>
+          <td>Likely</td>
+          <td>There is a high level of clinical certainty that the reaction was caused by the identified Substance.</td>
+        </tr>
+        <tr>
+          <td>confirmed
+            <a name="confirmed"> </a>
+          </td>
+          <td>Confirmed</td>
+          <td>There is a very high level of clinical certainty that the reaction was due to the identified Substance, which may include clinical evidence by testing or rechallenge.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.54"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/reaction-event-certainty"/>
+  <version value="1.1.0"/>
+  <name value="AllergyIntoleranceCertainty"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="Statement about the degree of clinical certainty that a Specific Substance was the cause of the Manifestation in an reaction event."/>
+  <codeSystem>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+      <valueUri value="urn:oid:2.16.840.1.113883.4.642.1.54"/>
+    </extension>
+    <system value="http://hl7.org/fhir/reaction-event-certainty"/>
+    <version value="1.1.0"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="unlikely"/>
+      <display value="Unlikely"/>
+      <definition value="There is a low level of clinical certainty that the reaction was caused by the identified Substance."/>
+    </concept>
+    <concept>
+      <code value="likely"/>
+      <display value="Likely"/>
+      <definition value="There is a high level of clinical certainty that the reaction was caused by the identified Substance."/>
+    </concept>
+    <concept>
+      <code value="confirmed"/>
+      <display value="Confirmed"/>
+      <definition value="There is a very high level of clinical certainty that the reaction was due to the identified Substance, which may include clinical evidence by testing or rechallenge."/>
+    </concept>
+  </codeSystem>
+</ValueSet>

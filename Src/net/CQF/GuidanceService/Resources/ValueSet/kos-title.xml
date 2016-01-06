@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="kos-title"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="extensions"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>KOStitle</h2>
+      <p>The document title code of key object selection</p>
+      <p>
+        <b>Copyright Statement:</b> These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association.
+      </p>
+      <p>This value set includes codes from the following code systems:</p>
+      <ul>
+        <li>Include these codes as defined in http://nema.org/dicom/dicm
+          <table>
+            <tr>
+              <td>
+                <b>Code</b>
+              </td>
+              <td>
+                <b>Display</b>
+              </td>
+              <td>
+                <b>Definition</b>
+              </td>
+            </tr>
+            <tr>
+              <td>113000</td>
+              <td/>
+              <td>Of Interest</td>
+            </tr>
+            <tr>
+              <td>113001</td>
+              <td/>
+              <td>Rejected for Quality Reasons</td>
+            </tr>
+            <tr>
+              <td>113002</td>
+              <td/>
+              <td>For Referring Provider</td>
+            </tr>
+            <tr>
+              <td>113003</td>
+              <td/>
+              <td>For Surgery</td>
+            </tr>
+            <tr>
+              <td>113004</td>
+              <td/>
+              <td>For Teaching</td>
+            </tr>
+            <tr>
+              <td>113005</td>
+              <td/>
+              <td>For Conference</td>
+            </tr>
+            <tr>
+              <td>113006</td>
+              <td/>
+              <td>For Therapy</td>
+            </tr>
+            <tr>
+              <td>113007</td>
+              <td/>
+              <td>For Patient</td>
+            </tr>
+            <tr>
+              <td>113008</td>
+              <td/>
+              <td>For Peer Review</td>
+            </tr>
+            <tr>
+              <td>113009</td>
+              <td/>
+              <td>For Research</td>
+            </tr>
+            <tr>
+              <td>113010</td>
+              <td/>
+              <td>Quality Issue</td>
+            </tr>
+            <tr>
+              <td>113013</td>
+              <td/>
+              <td>Best In Set</td>
+            </tr>
+            <tr>
+              <td>113018</td>
+              <td/>
+              <td>For Printing</td>
+            </tr>
+            <tr>
+              <td>113020</td>
+              <td/>
+              <td>For Report Attachment</td>
+            </tr>
+            <tr>
+              <td>113021</td>
+              <td/>
+              <td>For Litigation</td>
+            </tr>
+            <tr>
+              <td>113030</td>
+              <td/>
+              <td>Manifest</td>
+            </tr>
+            <tr>
+              <td>113031</td>
+              <td/>
+              <td>Signed Manifest</td>
+            </tr>
+            <tr>
+              <td>113032</td>
+              <td/>
+              <td>Complete Study Content</td>
+            </tr>
+            <tr>
+              <td>113033</td>
+              <td/>
+              <td>Signed Complete Study Content</td>
+            </tr>
+            <tr>
+              <td>113034</td>
+              <td/>
+              <td>Complete Acquisition Content</td>
+            </tr>
+            <tr>
+              <td>113035</td>
+              <td/>
+              <td>Signed Complete Acquisition Content</td>
+            </tr>
+            <tr>
+              <td>113036</td>
+              <td/>
+              <td>Group of Frames for Display</td>
+            </tr>
+            <tr>
+              <td>113037</td>
+              <td/>
+              <td>Rejected for Patient Safety Reasons</td>
+            </tr>
+            <tr>
+              <td>113038</td>
+              <td/>
+              <td>Incorrect Modality Worklist Entry</td>
+            </tr>
+            <tr>
+              <td>113039</td>
+              <td/>
+              <td>Data Retention Policy Expired</td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.159"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/kos-title"/>
+  <version value="1.1.0"/>
+  <name value="KOStitle"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="The document title code of key object selection"/>
+  <copyright value="These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association."/>
+  <compose>
+    <include>
+      <system value="http://nema.org/dicom/dicm"/>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="Of Interest"/>
+        </extension>
+        <code value="113000"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="Rejected for Quality Reasons"/>
+        </extension>
+        <code value="113001"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="For Referring Provider"/>
+        </extension>
+        <code value="113002"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="For Surgery"/>
+        </extension>
+        <code value="113003"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="For Teaching"/>
+        </extension>
+        <code value="113004"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="For Conference"/>
+        </extension>
+        <code value="113005"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="For Therapy"/>
+        </extension>
+        <code value="113006"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="For Patient"/>
+        </extension>
+        <code value="113007"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="For Peer Review"/>
+        </extension>
+        <code value="113008"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="For Research"/>
+        </extension>
+        <code value="113009"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="Quality Issue"/>
+        </extension>
+        <code value="113010"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="Best In Set"/>
+        </extension>
+        <code value="113013"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="For Printing"/>
+        </extension>
+        <code value="113018"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="For Report Attachment"/>
+        </extension>
+        <code value="113020"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="For Litigation"/>
+        </extension>
+        <code value="113021"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="Manifest"/>
+        </extension>
+        <code value="113030"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="Signed Manifest"/>
+        </extension>
+        <code value="113031"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="Complete Study Content"/>
+        </extension>
+        <code value="113032"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="Signed Complete Study Content"/>
+        </extension>
+        <code value="113033"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="Complete Acquisition Content"/>
+        </extension>
+        <code value="113034"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="Signed Complete Acquisition Content"/>
+        </extension>
+        <code value="113035"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="Group of Frames for Display"/>
+        </extension>
+        <code value="113036"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="Rejected for Patient Safety Reasons"/>
+        </extension>
+        <code value="113037"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="Incorrect Modality Worklist Entry"/>
+        </extension>
+        <code value="113038"/>
+      </concept>
+      <concept>
+        <extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+          <valueString value="Data Retention Policy Expired"/>
+        </extension>
+        <code value="113039"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="encounter-class"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>EncounterClass</h2>
+      <p>Classification of the encounter</p>
+      <p>This value set has an inline code system http://hl7.org/fhir/encounter-class, which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>inpatient
+            <a name="inpatient"> </a>
+          </td>
+          <td>Inpatient</td>
+          <td>An encounter during which the patient is hospitalized and stays overnight.</td>
+        </tr>
+        <tr>
+          <td>outpatient
+            <a name="outpatient"> </a>
+          </td>
+          <td>Outpatient</td>
+          <td>An encounter during which the patient is not hospitalized overnight.</td>
+        </tr>
+        <tr>
+          <td>ambulatory
+            <a name="ambulatory"> </a>
+          </td>
+          <td>Ambulatory</td>
+          <td>An encounter where the patient visits the practitioner in his/her office, e.g. a G.P. visit.</td>
+        </tr>
+        <tr>
+          <td>emergency
+            <a name="emergency"> </a>
+          </td>
+          <td>Emergency</td>
+          <td>An encounter in the Emergency Care Department.</td>
+        </tr>
+        <tr>
+          <td>home
+            <a name="home"> </a>
+          </td>
+          <td>Home</td>
+          <td>An encounter where the practitioner visits the patient at his/her home.</td>
+        </tr>
+        <tr>
+          <td>field
+            <a name="field"> </a>
+          </td>
+          <td>Field</td>
+          <td>An encounter taking place outside the regular environment for giving care.</td>
+        </tr>
+        <tr>
+          <td>daytime
+            <a name="daytime"> </a>
+          </td>
+          <td>Daytime</td>
+          <td>An encounter where the patient needs more prolonged treatment or investigations than outpatients, but who do not need to stay in the hospital overnight.</td>
+        </tr>
+        <tr>
+          <td>virtual
+            <a name="virtual"> </a>
+          </td>
+          <td>Virtual</td>
+          <td>An encounter that takes place where the patient and practitioner do not physically meet but use electronic means for contact.</td>
+        </tr>
+        <tr>
+          <td>other
+            <a name="other"> </a>
+          </td>
+          <td>Other</td>
+          <td>Any other encounter type that is not described by one of the other values. Where this is used it is expected that an implementer will include an extension value to define what the actual other type is.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.138"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/encounter-class"/>
+  <version value="1.1.0"/>
+  <name value="EncounterClass"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="Classification of the encounter"/>
+  <codeSystem>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+      <valueUri value="urn:oid:2.16.840.1.113883.4.642.1.138"/>
+    </extension>
+    <system value="http://hl7.org/fhir/encounter-class"/>
+    <version value="1.1.0"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="inpatient"/>
+      <display value="Inpatient"/>
+      <definition value="An encounter during which the patient is hospitalized and stays overnight."/>
+    </concept>
+    <concept>
+      <code value="outpatient"/>
+      <display value="Outpatient"/>
+      <definition value="An encounter during which the patient is not hospitalized overnight."/>
+    </concept>
+    <concept>
+      <code value="ambulatory"/>
+      <display value="Ambulatory"/>
+      <definition value="An encounter where the patient visits the practitioner in his/her office, e.g. a G.P. visit."/>
+    </concept>
+    <concept>
+      <code value="emergency"/>
+      <display value="Emergency"/>
+      <definition value="An encounter in the Emergency Care Department."/>
+    </concept>
+    <concept>
+      <code value="home"/>
+      <display value="Home"/>
+      <definition value="An encounter where the practitioner visits the patient at his/her home."/>
+    </concept>
+    <concept>
+      <code value="field"/>
+      <display value="Field"/>
+      <definition value="An encounter taking place outside the regular environment for giving care."/>
+    </concept>
+    <concept>
+      <code value="daytime"/>
+      <display value="Daytime"/>
+      <definition value="An encounter where the patient needs more prolonged treatment or investigations than outpatients, but who do not need to stay in the hospital overnight."/>
+    </concept>
+    <concept>
+      <code value="virtual"/>
+      <display value="Virtual"/>
+      <definition value="An encounter that takes place where the patient and practitioner do not physically meet but use electronic means for contact."/>
+    </concept>
+    <concept>
+      <code value="other"/>
+      <display value="Other"/>
+      <definition value="Any other encounter type that is not described by one of the other values. Where this is used it is expected that an implementer will include an extension value to define what the actual other type is."/>
+    </concept>
+  </codeSystem>
+</ValueSet>

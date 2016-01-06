@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="encounter-admit-source"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>AdmitSource</h2>
+      <p>This value set defines a set of codes that can be used to indicate from where the patient came in.</p>
+      <p>This value set has an inline code system http://hl7.org/fhir/admit-source, which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>hosp-trans
+            <a name="hosp-trans"> </a>
+          </td>
+          <td>Transferred from other hospital</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>emd
+            <a name="emd"> </a>
+          </td>
+          <td>From accident/emergency department</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>outp
+            <a name="outp"> </a>
+          </td>
+          <td>From outpatient department</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>born
+            <a name="born"> </a>
+          </td>
+          <td>Born in hospital</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>gp
+            <a name="gp"> </a>
+          </td>
+          <td>General Practitioner referral</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>mp
+            <a name="mp"> </a>
+          </td>
+          <td>Medical Practitioner/physician referral</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>nursing
+            <a name="nursing"> </a>
+          </td>
+          <td>From nursing home</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>psych
+            <a name="psych"> </a>
+          </td>
+          <td>From psychiatric hospital</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>rehab
+            <a name="rehab"> </a>
+          </td>
+          <td>From rehabilitation facility</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>other
+            <a name="other"> </a>
+          </td>
+          <td>Other</td>
+          <td/>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.144"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/encounter-admit-source"/>
+  <version value="1.1.0"/>
+  <name value="AdmitSource"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="FHIR Project team"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="This value set defines a set of codes that can be used to indicate from where the patient came in."/>
+  <codeSystem>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+      <valueUri value="urn:oid:2.16.840.1.113883.4.642.1.144"/>
+    </extension>
+    <system value="http://hl7.org/fhir/admit-source"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="hosp-trans"/>
+      <display value="Transferred from other hospital"/>
+    </concept>
+    <concept>
+      <code value="emd"/>
+      <display value="From accident/emergency department"/>
+    </concept>
+    <concept>
+      <code value="outp"/>
+      <display value="From outpatient department"/>
+    </concept>
+    <concept>
+      <code value="born"/>
+      <display value="Born in hospital"/>
+    </concept>
+    <concept>
+      <code value="gp"/>
+      <display value="General Practitioner referral"/>
+    </concept>
+    <concept>
+      <code value="mp"/>
+      <display value="Medical Practitioner/physician referral"/>
+    </concept>
+    <concept>
+      <code value="nursing"/>
+      <display value="From nursing home"/>
+    </concept>
+    <concept>
+      <code value="psych"/>
+      <display value="From psychiatric hospital"/>
+    </concept>
+    <concept>
+      <code value="rehab"/>
+      <display value="From rehabilitation facility"/>
+    </concept>
+    <concept>
+      <code value="other"/>
+      <display value="Other"/>
+    </concept>
+  </codeSystem>
+</ValueSet>

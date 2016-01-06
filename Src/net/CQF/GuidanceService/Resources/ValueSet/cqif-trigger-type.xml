@@ -3,7 +3,7 @@
 <ValueSet xmlns="http://hl7.org/fhir">
   <id value="cqif-trigger-type"/>
   <meta>
-    <lastUpdated value="2015-09-07T11:52:14.654-06:00"/>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
     <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
   </meta>
   <text>
@@ -80,7 +80,7 @@
     <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.0"/>
   </extension>
   <url value="http://hl7.org/fhir/ValueSet/cqif-trigger-type"/>
-  <version value="1.0.0"/>
+  <version value="1.1.0"/>
   <name value="TriggerType"/>
   <status value="draft"/>
   <experimental value="false"/>
@@ -95,11 +95,11 @@
       <value value="fhir@lists.hl7.org"/>
     </telecom>
   </contact>
-  <date value="2015-09-07T11:52:14-06:00"/>
+  <date value="2015-12-10T13:44:47-07:00"/>
   <description value="The type of trigger"/>
   <codeSystem>
     <system value="http://hl7.org/fhir/trigger-type"/>
-    <version value="1.0.0"/>
+    <version value="1.1.0"/>
     <caseSensitive value="true"/>
     <concept>
       <code value="named-event"/>

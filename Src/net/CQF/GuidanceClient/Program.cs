@@ -15,10 +15,11 @@ namespace GuidanceClient
 	{
 		static void Main(string[] args)
 		{
-			var client = new FhirClient("http://localhost:1398/fhir/");
+			var client = new FhirClient(AppSettings.Default.FhirEndpoint);
+			var inputFileName = args.Length > 0 ? args[1] : AppSettings.Default.InputFile;
 			client.PreferredFormat = ResourceFormat.Json;
 			Parameters inputParameters = null;
-			using (var inputFile = File.Open("Examples\\guidance-operation-request-example-v2.xml", FileMode.Open))
+			using (var inputFile = File.Open(inputFileName, FileMode.Open))
 			{
 				using (var inputReader = XmlReader.Create(inputFile))
 				{

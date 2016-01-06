@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="relationship"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Surface Codes</h2>
+      <p>This value set includes the Patient to subscriber relationship codes.</p>
+      <p>
+        <b>Copyright Statement:</b> This is an example set.
+      </p>
+      <p>This value set has an inline code system http://hl7.org/fhir/relationship, which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>1
+            <a name="1"> </a>
+          </td>
+          <td/>
+        </tr>
+        <tr>
+          <td>2
+            <a name="2"> </a>
+          </td>
+          <td/>
+        </tr>
+        <tr>
+          <td>3
+            <a name="3"> </a>
+          </td>
+          <td/>
+        </tr>
+        <tr>
+          <td>4
+            <a name="4"> </a>
+          </td>
+          <td/>
+        </tr>
+        <tr>
+          <td>5
+            <a name="5"> </a>
+          </td>
+          <td/>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.23"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/relationship"/>
+  <version value="1.1.0"/>
+  <name value="Surface Codes"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="FHIR Project team"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="This value set includes the Patient to subscriber relationship codes."/>
+  <copyright value="This is an example set."/>
+  <codeSystem>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+      <valueUri value="urn:oid:2.16.840.1.113883.4.642.1.23"/>
+    </extension>
+    <system value="http://hl7.org/fhir/relationship"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="1"/>
+    </concept>
+    <concept>
+      <code value="2"/>
+    </concept>
+    <concept>
+      <code value="3"/>
+    </concept>
+    <concept>
+      <code value="4"/>
+    </concept>
+    <concept>
+      <code value="5"/>
+    </concept>
+  </codeSystem>
+</ValueSet>

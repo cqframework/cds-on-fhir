@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="identifier-use"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>IdentifierUse</h2>
+      <p>Identifies the purpose for this identifier, if known .</p>
+      <p>This value set has an inline code system http://hl7.org/fhir/identifier-use, which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>usual
+            <a name="usual"> </a>
+          </td>
+          <td>Usual</td>
+          <td>The identifier recommended for display and use in real-world interactions.</td>
+        </tr>
+        <tr>
+          <td>official
+            <a name="official"> </a>
+          </td>
+          <td>Official</td>
+          <td>The identifier considered to be most trusted for the identification of this item.</td>
+        </tr>
+        <tr>
+          <td>temp
+            <a name="temp"> </a>
+          </td>
+          <td>Temp</td>
+          <td>A temporary identifier.</td>
+        </tr>
+        <tr>
+          <td>secondary
+            <a name="secondary"> </a>
+          </td>
+          <td>Secondary</td>
+          <td>An identifier that was assigned in secondary use - it serves to identify the object in a relative context, but cannot be consistently assigned to the same object again in a different context.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.33"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/identifier-use"/>
+  <version value="1.1.0"/>
+  <name value="IdentifierUse"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="Identifies the purpose for this identifier, if known ."/>
+  <codeSystem>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+      <valueUri value="urn:oid:2.16.840.1.113883.4.642.1.33"/>
+    </extension>
+    <system value="http://hl7.org/fhir/identifier-use"/>
+    <version value="1.1.0"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="usual"/>
+      <display value="Usual"/>
+      <definition value="The identifier recommended for display and use in real-world interactions."/>
+    </concept>
+    <concept>
+      <code value="official"/>
+      <display value="Official"/>
+      <definition value="The identifier considered to be most trusted for the identification of this item."/>
+    </concept>
+    <concept>
+      <code value="temp"/>
+      <display value="Temp"/>
+      <definition value="A temporary identifier."/>
+    </concept>
+    <concept>
+      <code value="secondary"/>
+      <display value="Secondary"/>
+      <definition value="An identifier that was assigned in secondary use - it serves to identify the object in a relative context, but cannot be consistently assigned to the same object again in a different context."/>
+    </concept>
+  </codeSystem>
+</ValueSet>

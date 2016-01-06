@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="condition-clinical"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Condition Clinical Status Codes</h2>
+      <p>Preferred value set for Condition Clinical Status.</p>
+      <p>This value set has an inline code system http://hl7.org/fhir/condition-clinical, which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>active
+            <a name="active"> </a>
+          </td>
+          <td>Active</td>
+          <td>The subject is currently experiencing the symptoms of the condition.</td>
+        </tr>
+        <tr>
+          <td>relapse
+            <a name="relapse"> </a>
+          </td>
+          <td>Relapse</td>
+          <td>The subject is re-experiencing the symptoms of the condition after a period of remission or presumed resolution.</td>
+        </tr>
+        <tr>
+          <td>remission
+            <a name="remission"> </a>
+          </td>
+          <td>Remission</td>
+          <td>The subject is no longer experiencing the symptoms of the condition, but there is a risk of the symptoms returning.</td>
+        </tr>
+        <tr>
+          <td>resolved
+            <a name="resolved"> </a>
+          </td>
+          <td>Resolved</td>
+          <td>The subject is no longer experiencing the symptoms of the condition and there is no perceived risk of the symptoms returning.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.74"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/condition-clinical"/>
+  <version value="1.1.0"/>
+  <name value="Condition Clinical Status Codes"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="FHIR Project team"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="Preferred value set for Condition Clinical Status."/>
+  <codeSystem>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+      <valueUri value="urn:oid:2.16.840.1.113883.4.642.1.74"/>
+    </extension>
+    <system value="http://hl7.org/fhir/condition-clinical"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="active"/>
+      <display value="Active"/>
+      <definition value="The subject is currently experiencing the symptoms of the condition."/>
+    </concept>
+    <concept>
+      <code value="relapse"/>
+      <display value="Relapse"/>
+      <definition value="The subject is re-experiencing the symptoms of the condition after a period of remission or presumed resolution."/>
+    </concept>
+    <concept>
+      <code value="remission"/>
+      <display value="Remission"/>
+      <definition value="The subject is no longer experiencing the symptoms of the condition, but there is a risk of the symptoms returning."/>
+    </concept>
+    <concept>
+      <code value="resolved"/>
+      <display value="Resolved"/>
+      <definition value="The subject is no longer experiencing the symptoms of the condition and there is no perceived risk of the symptoms returning."/>
+    </concept>
+  </codeSystem>
+</ValueSet>

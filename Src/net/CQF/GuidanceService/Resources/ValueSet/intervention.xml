@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="intervention"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Intervention Codes</h2>
+      <p>This value set includes sample Intervention codes.</p>
+      <p>
+        <b>Copyright Statement:</b> This is an example set.
+      </p>
+      <p>This value set has an inline code system http://hl7.org/fhir/intervention, which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>unknown
+            <a name="unknown"> </a>
+          </td>
+          <td>Unknown</td>
+          <td>Unknown</td>
+        </tr>
+        <tr>
+          <td>other
+            <a name="other"> </a>
+          </td>
+          <td>Other</td>
+          <td>Other</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.309"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/intervention"/>
+  <version value="1.1.0"/>
+  <name value="Intervention Codes"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="Financial Management"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="This value set includes sample Intervention codes."/>
+  <copyright value="This is an example set."/>
+  <codeSystem>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+      <valueUri value="urn:oid:2.16.840.1.113883.4.642.1.309"/>
+    </extension>
+    <system value="http://hl7.org/fhir/intervention"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="unknown"/>
+    <!--    unknown    -->
+      <display value="Unknown"/>
+      <definition value="Unknown"/>
+    </concept>
+    <concept>
+      <code value="other"/>
+    <!--    other    -->
+      <display value="Other"/>
+      <definition value="Other"/>
+    </concept>
+  </codeSystem>
+</ValueSet>

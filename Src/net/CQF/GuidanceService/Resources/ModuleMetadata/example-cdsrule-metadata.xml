@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ModuleMetadata xmlns="http://hl7.org/fhir">
+	<id value="example-cdsrule-metadata"/>
+	<identifier>
+	  <use value="official"/>
+	  <value value="ChlamydiaScreening_CDS_UsingCommon"/>
+	</identifier>
+	<version value="2.0.0"/>
+	<title value="Chalmydia Screening CDS Example Using Common"/>
+	<type value="module"/>
+	<status value="draft"/>
+	<description value="Chlamydia Screening CDS Example Using Common"/>
+	<publicationDate value="2015-07-22"/>
+	<topic>
+		<text value="Chlamydia Screeening"/>
+	</topic>
+	<keyword value="Chlamydia Screening"/>
+</ModuleMetadata>

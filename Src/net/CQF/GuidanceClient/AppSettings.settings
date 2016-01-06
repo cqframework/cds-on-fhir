@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GuidanceClient" GeneratedClassName="AppSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="FhirEndpoint" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:1398/fhir</Value>
+    </Setting>
+    <Setting Name="InputFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Examples\evaluate-operation-request-example.xml</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

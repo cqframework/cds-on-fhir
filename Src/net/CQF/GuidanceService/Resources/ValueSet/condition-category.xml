@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="condition-category"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Condition Category Codes</h2>
+      <p>Preferred value set for Condition Categories.</p>
+      <p>This value set has an inline code system http://hl7.org/fhir/condition-category, which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>complaint
+            <a name="complaint"> </a>
+          </td>
+          <td>Complaint</td>
+          <td>The patient considers the condition an issue to be addressed.</td>
+        </tr>
+        <tr>
+          <td>symptom
+            <a name="symptom"> </a>
+          </td>
+          <td>Symptom</td>
+          <td>A symptom of a condition (as might be mentioned in a review of systems).</td>
+        </tr>
+        <tr>
+          <td>finding
+            <a name="finding"> </a>
+          </td>
+          <td>Finding</td>
+          <td>An observation made by a healthcare provider.</td>
+        </tr>
+        <tr>
+          <td>diagnosis
+            <a name="diagnosis"> </a>
+          </td>
+          <td>Diagnosis</td>
+          <td>This is a judgment made by a healthcare provider that the patient has a particular disease or condition.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.73"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/condition-category"/>
+  <version value="1.1.0"/>
+  <name value="Condition Category Codes"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="FHIR Project team"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="Preferred value set for Condition Categories."/>
+  <codeSystem>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+      <valueUri value="urn:oid:2.16.840.1.113883.4.642.1.73"/>
+    </extension>
+    <system value="http://hl7.org/fhir/condition-category"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="complaint"/>
+      <display value="Complaint"/>
+      <definition value="The patient considers the condition an issue to be addressed."/>
+    </concept>
+    <concept>
+      <code value="symptom"/>
+      <display value="Symptom"/>
+      <definition value="A symptom of a condition (as might be mentioned in a review of systems)."/>
+    </concept>
+    <concept>
+      <code value="finding"/>
+      <display value="Finding"/>
+      <definition value="An observation made by a healthcare provider."/>
+    </concept>
+    <concept>
+      <code value="diagnosis"/>
+      <display value="Diagnosis"/>
+      <definition value="This is a judgment made by a healthcare provider that the patient has a particular disease or condition."/>
+    </concept>
+  </codeSystem>
+</ValueSet>

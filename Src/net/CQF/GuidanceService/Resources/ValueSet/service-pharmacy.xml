@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="service-pharmacy"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Example Pharmacy Service Codes</h2>
+      <p>This value set includes a smattering of Pharmacy Service codes.</p>
+      <p>
+        <b>Copyright Statement:</b> This is an example set.
+      </p>
+      <p>This value set has an inline code system http://hl7.org/fhir/ex-pharmaservice, which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>smokecess
+            <a name="smokecess"> </a>
+          </td>
+          <td>Smoking cessation</td>
+          <td>Smoking cessation</td>
+        </tr>
+        <tr>
+          <td>flushot
+            <a name="flushot"> </a>
+          </td>
+          <td>Flu Shot</td>
+          <td>Flu Shot</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.324"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/service-pharmacy"/>
+  <version value="1.1.0"/>
+  <name value="Example Pharmacy Service Codes"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="Financial Management"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="This value set includes a smattering of Pharmacy Service codes."/>
+  <copyright value="This is an example set."/>
+  <codeSystem>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+      <valueUri value="urn:oid:2.16.840.1.113883.4.642.1.324"/>
+    </extension>
+    <system value="http://hl7.org/fhir/ex-pharmaservice"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="smokecess"/>
+      <display value="Smoking cessation"/>
+      <definition value="Smoking cessation"/>
+    </concept>
+    <concept>
+      <code value="flushot"/>
+      <display value="Flu Shot"/>
+      <definition value="Flu Shot"/>
+    </concept>
+  </codeSystem>
+</ValueSet>

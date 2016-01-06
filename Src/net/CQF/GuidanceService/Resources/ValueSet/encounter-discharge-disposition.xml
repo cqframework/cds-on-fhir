@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="encounter-discharge-disposition"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>DischargeDisposition</h2>
+      <p>This value set defines a set of codes that can be used to where the patient left the hospital.</p>
+      <p>This value set has an inline code system http://hl7.org/fhir/discharge-disposition, which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>home
+            <a name="home"> </a>
+          </td>
+          <td>Home</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>other-hcf
+            <a name="other-hcf"> </a>
+          </td>
+          <td>Other healthcare facility</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>hosp
+            <a name="hosp"> </a>
+          </td>
+          <td>Hospice</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>long
+            <a name="long"> </a>
+          </td>
+          <td>Long-term care</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>aadvice
+            <a name="aadvice"> </a>
+          </td>
+          <td>Left against advice</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>exp
+            <a name="exp"> </a>
+          </td>
+          <td>Expired</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>psy
+            <a name="psy"> </a>
+          </td>
+          <td>Psychiatric hospital</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>rehab
+            <a name="rehab"> </a>
+          </td>
+          <td>Rehabilitation</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>oth
+            <a name="oth"> </a>
+          </td>
+          <td>Other</td>
+          <td/>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.145"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/encounter-discharge-disposition"/>
+  <version value="1.1.0"/>
+  <name value="DischargeDisposition"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="FHIR Project team"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="This value set defines a set of codes that can be used to where the patient left the hospital."/>
+  <codeSystem>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+      <valueUri value="urn:oid:2.16.840.1.113883.4.642.1.145"/>
+    </extension>
+    <system value="http://hl7.org/fhir/discharge-disposition"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="home"/>
+      <display value="Home"/>
+    </concept>
+    <concept>
+      <code value="other-hcf"/>
+      <display value="Other healthcare facility"/>
+    </concept>
+    <concept>
+      <code value="hosp"/>
+      <display value="Hospice"/>
+    </concept>
+    <concept>
+      <code value="long"/>
+      <display value="Long-term care"/>
+    </concept>
+    <concept>
+      <code value="aadvice"/>
+      <display value="Left against advice"/>
+    </concept>
+    <concept>
+      <code value="exp"/>
+      <display value="Expired"/>
+    </concept>
+    <concept>
+      <code value="psy"/>
+      <display value="Psychiatric hospital"/>
+    </concept>
+    <concept>
+      <code value="rehab"/>
+      <display value="Rehabilitation"/>
+    </concept>
+    <concept>
+      <code value="oth"/>
+      <display value="Other"/>
+    </concept>
+  </codeSystem>
+</ValueSet>

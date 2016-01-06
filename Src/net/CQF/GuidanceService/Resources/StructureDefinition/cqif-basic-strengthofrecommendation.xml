@@ -15,7 +15,7 @@
   </contact>
   <date value="2015-05-30"/>
   <description value="The strength of the recommendation assigned to this reference. The code system specifies the scale used to grade the evidence source, while the code specifies the actual score (represented as a coded value) for the strength of the evidence."/>
-  <fhirVersion value="1.0.0"/>
+  <fhirVersion value="1.1.0"/>
   <kind value="datatype"/>
   <constrainedType value="Extension"/>
   <abstract value="false"/>

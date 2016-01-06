@@ -210,6 +210,16 @@ namespace Spark.Controllers
             Key key = Key.Create(type, id);
             switch(operation.ToLower())
             {
+                case "evaluate":
+                    switch (type.ToResourceType())
+                    {
+                        case ResourceType.DecisionSupportRule:
+                        case ResourceType.DecisionSupportServiceModule:
+                            return Respond.WithResource(engine.Evaluate(key.TypeName.ToResourceType(), key.ResourceId, parameters));
+
+                        default: return Respond.WithError(HttpStatusCode.NotFound, "Unknown operation");
+                    }
+
                 case "meta": return service.ReadMeta(key);
                 case "meta-add": return service.AddMeta(key, parameters);
                 case "meta-delete":

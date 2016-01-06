@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="allergy-intolerance-status"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>AllergyIntoleranceStatus</h2>
+      <p>Assertion about certainty associated with a propensity, or potential risk, of a reaction to the identified Substance.</p>
+      <p>This value set has an inline code system http://hl7.org/fhir/allergy-intolerance-status, which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <b>Lvl</b>
+          </td>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>active
+            <a name="active"> </a>
+          </td>
+          <td>Active</td>
+          <td>An active record of a reaction to the identified Substance.</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>  unconfirmed
+            <a name="unconfirmed"> </a>
+          </td>
+          <td>Unconfirmed</td>
+          <td>A low level of certainty about the propensity for a reaction to the identified Substance.</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>  confirmed
+            <a name="confirmed"> </a>
+          </td>
+          <td>Confirmed</td>
+          <td>A high level of certainty about the propensity for a reaction to the identified Substance, which may include clinical evidence by testing or rechallenge.</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>inactive
+            <a name="inactive"> </a>
+          </td>
+          <td>Inactive</td>
+          <td>An inactive record of a reaction to the identified Substance.</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>  resolved
+            <a name="resolved"> </a>
+          </td>
+          <td>Resolved</td>
+          <td>A reaction to the identified Substance has been clinically reassessed by testing or rechallenge and considered to be resolved.</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>  refuted
+            <a name="refuted"> </a>
+          </td>
+          <td>Refuted</td>
+          <td>A propensity for a reaction to the identified Substance has been disproven with a high level of clinical certainty, which may include testing or rechallenge, and is refuted.</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>  entered-in-error
+            <a name="entered-in-error"> </a>
+          </td>
+          <td>Entered In Error</td>
+          <td>The statement was entered in error and is not valid.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.50"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/allergy-intolerance-status"/>
+  <version value="1.1.0"/>
+  <name value="AllergyIntoleranceStatus"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="Assertion about certainty associated with a propensity, or potential risk, of a reaction to the identified Substance."/>
+  <codeSystem>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+      <valueUri value="urn:oid:2.16.840.1.113883.4.642.1.50"/>
+    </extension>
+    <system value="http://hl7.org/fhir/allergy-intolerance-status"/>
+    <version value="1.1.0"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="active"/>
+      <display value="Active"/>
+      <definition value="An active record of a reaction to the identified Substance."/>
+      <concept>
+        <code value="unconfirmed"/>
+        <display value="Unconfirmed"/>
+        <definition value="A low level of certainty about the propensity for a reaction to the identified Substance."/>
+      </concept>
+      <concept>
+        <code value="confirmed"/>
+        <display value="Confirmed"/>
+        <definition value="A high level of certainty about the propensity for a reaction to the identified Substance, which may include clinical evidence by testing or rechallenge."/>
+      </concept>
+    </concept>
+    <concept>
+      <code value="inactive"/>
+      <display value="Inactive"/>
+      <definition value="An inactive record of a reaction to the identified Substance."/>
+      <concept>
+        <code value="resolved"/>
+        <display value="Resolved"/>
+        <definition value="A reaction to the identified Substance has been clinically reassessed by testing or rechallenge and considered to be resolved."/>
+      </concept>
+      <concept>
+        <code value="refuted"/>
+        <display value="Refuted"/>
+        <definition value="A propensity for a reaction to the identified Substance has been disproven with a high level of clinical certainty, which may include testing or rechallenge, and is refuted."/>
+      </concept>
+      <concept>
+        <code value="entered-in-error"/>
+        <display value="Entered In Error"/>
+        <definition value="The statement was entered in error and is not valid."/>
+      </concept>
+    </concept>
+  </codeSystem>
+</ValueSet>

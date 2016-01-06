@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="practitioner-specialty"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>PractitionerSpecialty</h2>
+      <p>This example value set defines a set of codes that can be used to indicate the specialty of a Practitioner.</p>
+      <p>This value set has an inline code system http://hl7.org/fhir/practitioner-specialty, which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>cardio
+            <a name="cardio"> </a>
+          </td>
+          <td>Cardiologist</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>dent
+            <a name="dent"> </a>
+          </td>
+          <td>Dentist</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>dietary
+            <a name="dietary"> </a>
+          </td>
+          <td>Dietary consultant</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>midw
+            <a name="midw"> </a>
+          </td>
+          <td>Midwife</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>sysarch
+            <a name="sysarch"> </a>
+          </td>
+          <td>Systems architect</td>
+          <td/>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.252"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/practitioner-specialty"/>
+  <version value="1.1.0"/>
+  <name value="PractitionerSpecialty"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="FHIR Project team"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="This example value set defines a set of codes that can be used to indicate the specialty of a Practitioner."/>
+  <codeSystem>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+      <valueUri value="urn:oid:2.16.840.1.113883.4.642.1.252"/>
+    </extension>
+    <system value="http://hl7.org/fhir/practitioner-specialty"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="cardio"/>
+      <display value="Cardiologist"/>
+    </concept>
+    <concept>
+      <code value="dent"/>
+      <display value="Dentist"/>
+    </concept>
+    <concept>
+      <code value="dietary"/>
+      <display value="Dietary consultant"/>
+    </concept>
+    <concept>
+      <code value="midw"/>
+      <display value="Midwife"/>
+    </concept>
+    <concept>
+      <code value="sysarch"/>
+      <display value="Systems architect"/>
+    </concept>
+  </codeSystem>
+</ValueSet>

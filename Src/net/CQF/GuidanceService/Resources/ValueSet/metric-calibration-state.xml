@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="metric-calibration-state"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>DeviceMetricCalibrationState</h2>
+      <p>Describes the state of a metric calibration.</p>
+      <p>This value set has an inline code system http://hl7.org/fhir/metric-calibration-state, which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>not-calibrated
+            <a name="not-calibrated"> </a>
+          </td>
+          <td>Not Calibrated</td>
+          <td>The metric has not been calibrated.</td>
+        </tr>
+        <tr>
+          <td>calibration-required
+            <a name="calibration-required"> </a>
+          </td>
+          <td>Calibration Required</td>
+          <td>The metric needs to be calibrated.</td>
+        </tr>
+        <tr>
+          <td>calibrated
+            <a name="calibrated"> </a>
+          </td>
+          <td>Calibrated</td>
+          <td>The metric has been calibrated.</td>
+        </tr>
+        <tr>
+          <td>unspecified
+            <a name="unspecified"> </a>
+          </td>
+          <td>Unspecified</td>
+          <td>The state of calibration of this metric is unspecified.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.340"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/metric-calibration-state"/>
+  <version value="1.1.0"/>
+  <name value="DeviceMetricCalibrationState"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="Describes the state of a metric calibration."/>
+  <codeSystem>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+      <valueUri value="urn:oid:2.16.840.1.113883.4.642.1.340"/>
+    </extension>
+    <system value="http://hl7.org/fhir/metric-calibration-state"/>
+    <version value="1.1.0"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="not-calibrated"/>
+      <display value="Not Calibrated"/>
+      <definition value="The metric has not been calibrated."/>
+    </concept>
+    <concept>
+      <code value="calibration-required"/>
+      <display value="Calibration Required"/>
+      <definition value="The metric needs to be calibrated."/>
+    </concept>
+    <concept>
+      <code value="calibrated"/>
+      <display value="Calibrated"/>
+      <definition value="The metric has been calibrated."/>
+    </concept>
+    <concept>
+      <code value="unspecified"/>
+      <display value="Unspecified"/>
+      <definition value="The state of calibration of this metric is unspecified."/>
+    </concept>
+  </codeSystem>
+</ValueSet>

@@ -18,7 +18,7 @@
   </contact>
   <date value="2015-05-30"/>
   <description value="A questionnaire with the ability to specify behavior associated with questions or groups of questions"/>
-  <fhirVersion value="1.0.0"/>
+  <fhirVersion value="1.1.0"/>
   <kind value="resource"/>
   <constrainedType value="Questionnaire"/>
   <abstract value="false"/>
@@ -43,12 +43,9 @@
         <code value="Questionnaire"/>
       </type>
       <constraint>
-        <key value="que-3"/>
-        <severity value="error"/>
-        <human value="If root group must be &quot;required&quot;"/>
-        <xpath value="f:group/f:required/@value=&#39;true&#39;"/>
-      </constraint>
-      <constraint>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-expression">
+          <valueString value="**.linkId.distinct()"/>
+        </extension>
         <key value="que-2"/>
         <severity value="error"/>
         <human value="The link ids for groups and questions must be unique within the questionnaire"/>
@@ -66,7 +63,7 @@
     <element>
       <path value="Questionnaire.id"/>
       <short value="Logical id of this artifact"/>
-      <definition value="The logical id of the resource, as used in the url for the resource. Once assigned, this value never changes."/>
+      <definition value="The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes."/>
       <comments value="The only time that a resource does not have an id is when it is being submitted to the server using a create operation. Bundles always have an id, though it is usually a generated UUID."/>
       <min value="0"/>
       <max value="1"/>
@@ -100,7 +97,7 @@
       <path value="Questionnaire.implicitRules"/>
       <short value="A set of rules under which this content was created"/>
       <definition value="A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content."/>
-      <comments value="Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element as much as possible."/>
+      <comments value="Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element as much as possible."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -131,7 +128,7 @@
       </type>
       <binding>
         <strength value="required"/>
-        <description value="A human language"/>
+        <description value="A human language."/>
         <valueSetUri value="http://tools.ietf.org/html/bcp47"/>
       </binding>
     </element>
@@ -185,10 +182,10 @@
     </element>
     <element>
       <path value="Questionnaire.extension"/>
-      <name value="content"/>
-      <short value="An attachment containing any logic referenced by the questionnaire"/>
-      <definition value="A CQL or ELM attachment containing any logic referenced by the questionnaire."/>
-      <alias value="content"/>
+      <name value="library"/>
+      <short value="A library containing logic referenced by the questionnaire"/>
+      <definition value="A CQL or ELM library containing any logic referenced by the questionnaire."/>
+      <alias value="library"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -198,7 +195,7 @@
       </base>
       <type>
         <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-content"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-library"/>
       </type>
     </element>
     <element>
@@ -226,8 +223,8 @@
     </element>
     <element>
       <path value="Questionnaire.identifier"/>
-      <short value="External Ids for this questionnaire"/>
-      <definition value="This records identifiers associated with this question set that are defined by business processed and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation)."/>
+      <short value="External identifiers for this questionnaire"/>
+      <definition value="This records identifiers associated with this question set that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation)."/>
       <requirements value="Need to allow connection to a wider workflow."/>
       <min value="0"/>
       <max value="*"/>
@@ -251,7 +248,7 @@
     </element>
     <element>
       <path value="Questionnaire.version"/>
-      <short value="Logical id for this version of Questionnaire"/>
+      <short value="Logical identifier for this version of Questionnaire"/>
       <definition value="The version number assigned by the publisher for business reasons.  It may remain the same when the resource is updated."/>
       <requirements value="In some cases, separate resource instances might be created for each version (if an older version can be maintained once a new version exists)."/>
       <alias value="N/A - MIF rather than RIM level"/>
@@ -293,7 +290,7 @@
       <isSummary value="true"/>
       <binding>
         <strength value="required"/>
-        <description value="Lifecycle status of the questionnaire"/>
+        <description value="Lifecycle status of the questionnaire."/>
         <valueSetReference>
           <reference value="http://hl7.org/fhir/ValueSet/questionnaire-status"/>
         </valueSetReference>
@@ -311,9 +308,9 @@
       <path value="Questionnaire.date"/>
       <short value="Date this version was authored"/>
       <definition value="The date that this questionnaire was last changed."/>
-      <alias value="Date Created"/>
+      <alias value="Date created"/>
       <alias value="Date published"/>
-      <alias value="Date Issued"/>
+      <alias value="Date issued"/>
       <alias value="Date updated"/>
       <min value="0"/>
       <max value="1"/>
@@ -381,6 +378,55 @@
       </mapping>
     </element>
     <element>
+      <path value="Questionnaire.title"/>
+      <short value="Name for the questionnaire"/>
+      <definition value="The name or label associated with this questionnaire."/>
+      <requirements value="Used for display, searching."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Questionnaire.title"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".title"/>
+      </mapping>
+    </element>
+    <element>
+      <path value="Questionnaire.concept"/>
+      <short value="Concept that represents the overall questionnaire"/>
+      <definition value="Identifies a how this question or group of questions is known in a particular terminology such as LOINC."/>
+      <requirements value="Allows linking of the complete Questionnaire resources to formal terminologies.  It&#39;s common for &quot;pannels&quot; of questions to be identified by a code."/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Questionnaire.concept"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Coding"/>
+      </type>
+      <isSummary value="true"/>
+      <binding>
+        <strength value="example"/>
+        <description value="Codes for questionnaires, groups and individual questions"/>
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/ValueSet/questionnaire-questions"/>
+        </valueSetReference>
+      </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".code"/>
+      </mapping>
+    </element>
+    <element>
       <path value="Questionnaire.subjectType"/>
       <short value="Resource that can be subject of QuestionnaireResponse"/>
       <definition value="Identifies the types of subjects that can be the subject of the questionnaire."/>
@@ -398,7 +444,7 @@
       <isSummary value="true"/>
       <binding>
         <strength value="required"/>
-        <description value="One of the resource types defined as part of FHIR"/>
+        <description value="One of the resource types defined as part of FHIR."/>
         <valueSetReference>
           <reference value="http://hl7.org/fhir/ValueSet/resource-types"/>
         </valueSetReference>
@@ -409,47 +455,80 @@
       </mapping>
     </element>
     <element>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
-        <valueString value="Group"/>
-      </extension>
-      <path value="Questionnaire.group"/>
-      <short value="Grouped questions"/>
-      <definition value="A collection of related questions (or further groupings of questions)."/>
-      <comments value="The Questionnaire itself has one &quot;root&quot; group with the actual contents of the Questionnaire.  Information on this root group applies to the questionnaire as a whole."/>
-      <requirements value="Need to be able to logically group answers to grouped questions."/>
-      <alias value="Section"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="Questionnaire.item"/>
+      <name value="item"/>
+      <short value="Questions and sections within the Questionnaire"/>
+      <definition value="The questions and groupings of questions that make up the questionnaire."/>
+      <min value="0"/>
+      <max value="*"/>
       <base>
-        <path value="Questionnaire.group"/>
-        <min value="1"/>
-        <max value="1"/>
+        <path value="Questionnaire.item"/>
+        <min value="0"/>
+        <max value="*"/>
       </base>
       <type>
         <code value="BackboneElement"/>
       </type>
       <condition value="que-3"/>
       <constraint>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-expression">
+          <valueString value="type!=&#39;display&#39; or (required.empty() and repeats.empty())"/>
+        </extension>
+        <key value="que-6"/>
+        <severity value="error"/>
+        <human value="Required and repeat aren&#39;t permitted for display items"/>
+        <xpath value="not(f:type/@value=&#39;display&#39; and (f:required or f:repeats))"/>
+      </constraint>
+      <constraint>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-expression">
+          <valueString value="(type!=&#39;choice&#39; and type!=&#39;open-choice&#39;) or (options.empty() and option.empty())"/>
+        </extension>
+        <key value="que-5"/>
+        <severity value="error"/>
+        <human value="Only &#39;choice&#39; items can have options"/>
+        <xpath value="f:type/@value=(&#39;choice&#39;,&#39;open-choice&#39;) or not(f:option or f:options)"/>
+      </constraint>
+      <constraint>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-expression">
+          <valueString value="option.empty() or options.empty()"/>
+        </extension>
+        <key value="que-4"/>
+        <severity value="error"/>
+        <human value="A question cannot have both option and options"/>
+        <xpath value="not(f:options and f:option)"/>
+      </constraint>
+      <constraint>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-expression">
+          <valueString value="type!=&#39;display&#39; or concept.empty()"/>
+        </extension>
+        <key value="que-3"/>
+        <severity value="error"/>
+        <human value="Display items cannot have a &quot;concept&quot; asserted"/>
+        <xpath value="not(f:type/@value=&#39;display&#39; and f:concept)"/>
+      </constraint>
+      <constraint>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-expression">
+          <valueString value="(type=&#39;group&#39; implies item.empty().not()) and (type.log(&#39;type&#39;)=&#39;display&#39; implies item.log(&#39;item&#39;).empty())"/>
+        </extension>
         <key value="que-1"/>
         <severity value="error"/>
-        <human value="Groups may either contain questions or groups but not both"/>
-        <xpath value="not(exists(f:group) and exists(f:question))"/>
+        <human value="Group items must have nested items, display items cannot have nested items"/>
+        <xpath value="not((f:type/@value=&#39;group&#39; and not(f:item)) or (f:type/@value=&#39;display&#39; and f:item))"/>
       </constraint>
-      <isSummary value="true"/>
       <mapping>
         <identity value="rim"/>
-        <map value=".outboundRelationship[typeCode=COMP].target[classCode=DOCSECT, moodCode=EVN]"/>
+        <map value=".outboundRelationship[typeCode=COMP].target[classCode=OBS, moodCode=DEF]"/>
       </mapping>
     </element>
     <element>
-      <path value="Questionnaire.group.id"/>
+      <path value="Questionnaire.item.id"/>
       <representation value="xmlAttr"/>
       <short value="xml:id (or equivalent in JSON)"/>
       <definition value="unique id for the element within a resource (for internal references)."/>
       <min value="0"/>
       <max value="1"/>
       <base>
-        <path value="Questionnaire.group.id"/>
+        <path value="Questionnaire.item.id"/>
         <min value="0"/>
         <max value="1"/>
       </base>
@@ -462,7 +541,27 @@
       </mapping>
     </element>
     <element>
-      <path value="Questionnaire.group.extension"/>
+      <path value="Questionnaire.item.extension"/>
+      <slicing>
+        <discriminator value="url"/>
+        <ordered value="false"/>
+        <rules value="open"/>
+      </slicing>
+      <short value="Extension"/>
+      <definition value="An Extension"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Questionnaire.item.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+    </element>
+    <element>
+      <path value="Questionnaire.item.extension"/>
       <name value="condition"/>
       <short value="A condition that determines whether or not the group is applicable"/>
       <definition value="The name of an expression that determines whether the group on which it appears is applicable. The expression is evaluated within the current context. If the result of evaluating the expression is true, the group is applicable. The expression has access to the current value of answered questions by the linkId of the question."/>
@@ -471,273 +570,17 @@
       <min value="0"/>
       <max value="1"/>
       <base>
-        <path value="Questionnaire.group.extension"/>
+        <path value="Questionnaire.item.extension"/>
         <min value="0"/>
         <max value="*"/>
       </base>
       <type>
         <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-expression"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-condition"/>
       </type>
     </element>
     <element>
-      <path value="Questionnaire.group.modifierExtension"/>
-      <short value="Extensions that cannot be ignored"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
-      <comments value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
-      <alias value="modifiers"/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="Questionnaire.group.modifierExtension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-      </type>
-      <isModifier value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
-    </element>
-    <element>
-      <path value="Questionnaire.group.linkId"/>
-      <short value="To link questionnaire with questionnaire response"/>
-      <definition value="An identifier that is unique within the questionnaire allowing linkage to the equivalent group in a QuestionnaireResponse resource."/>
-      <comments value="May be omitted if there is no expectation to link answers back to a questionnaire.  This *can* be a meaningful id (e.g. a LOINC code) but is not intended to have any meaning.  GUIDs or sequential numbers are appropriate here."/>
-      <requirements value="[[[QuestionnaireResponse]]] does not require omitted groups to be included and may have some groups that repeat, so linkage based on position alone is not sufficient."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Questionnaire.group.linkId"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="string"/>
-      </type>
-      <mapping>
-        <identity value="rim"/>
-        <map value=".id"/>
-      </mapping>
-    </element>
-    <element>
-      <path value="Questionnaire.group.title"/>
-      <short value="Name to be displayed for group"/>
-      <definition value="The human-readable name for this section of the questionnaire."/>
-      <comments value="The title of the &quot;root&quot; group is the title for the questionnaire."/>
-      <requirements value="When including text for the questionnaire with the answers, sections may have a section header."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Questionnaire.group.title"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="string"/>
-      </type>
-      <isSummary value="true"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value=".title"/>
-      </mapping>
-    </element>
-    <element>
-      <path value="Questionnaire.group.concept"/>
-      <short value="Concept that represents this section on a questionnaire"/>
-      <definition value="Identifies a how this group of questions is known in a particular terminology such as LOINC."/>
-      <comments value="The code(s) for the &quot;root&quot; group apply to the questionnaire as a whole."/>
-      <requirements value="Allows linking of groups of questions (and complete questionnaires) to formal terminologies."/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="Questionnaire.group.concept"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Coding"/>
-      </type>
-      <isSummary value="true"/>
-      <binding>
-        <strength value="example"/>
-        <description value="Codes for groupings of questionnaire questions"/>
-        <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/questionnaire-questions"/>
-        </valueSetReference>
-      </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value=".code"/>
-      </mapping>
-    </element>
-    <element>
-      <path value="Questionnaire.group.text"/>
-      <short value="Additional text for the group"/>
-      <definition value="Additional text for the group, used for display purposes."/>
-      <comments value="Common extensions are defined for more specialized types of display text."/>
-      <requirements value="When including text for the questionnaire, each section may contain additional explanations are background text."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Questionnaire.group.text"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="string"/>
-      </type>
-      <mapping>
-        <identity value="rim"/>
-        <map value=".text"/>
-      </mapping>
-    </element>
-    <element>
-      <path value="Questionnaire.group.required"/>
-      <short value="Must group be included in data results?"/>
-      <definition value="If true, indicates that the group must be present and have required questions within it answered.  If false, the group may be skipped when answering the questionnaire."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Questionnaire.group.required"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="boolean"/>
-      </type>
-      <defaultValueBoolean value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="Not supported - MIF/templating layer"/>
-      </mapping>
-    </element>
-    <element>
-      <path value="Questionnaire.group.repeats"/>
-      <short value="Whether the group may repeat"/>
-      <definition value="Whether the group may occur multiple times in the instance, containing multiple sets of answers."/>
-      <requirements value="Groups may be used to create set of (related) questions that can be repeated to give multiple answers to such a set."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Questionnaire.group.repeats"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="boolean"/>
-      </type>
-      <defaultValueBoolean value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="Not supported - MIF/templating layer"/>
-      </mapping>
-    </element>
-    <element>
-      <path value="Questionnaire.group.group"/>
-      <short value="Nested questionnaire group"/>
-      <definition value="A sub-group within a group. The ordering of groups within this group is relevant."/>
-      <requirements value="Reports can consist of complex nested groups."/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="Questionnaire.group.group"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <nameReference value="group"/>
-      <condition value="que-1"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value=".outboundRelationship[typeCode=COMP].target[classCode=DOCSECT, moodCode=EVN]"/>
-      </mapping>
-    </element>
-    <element>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
-        <valueString value="Question"/>
-      </extension>
-      <path value="Questionnaire.group.question"/>
-      <short value="Questions in this group"/>
-      <definition value="Set of questions within this group. The order of questions within the group is relevant."/>
-      <requirements value="Must register answers to questions."/>
-      <alias value="Responses"/>
-      <alias value="Contents"/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="Questionnaire.group.question"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="BackboneElement"/>
-      </type>
-      <condition value="que-1"/>
-      <constraint>
-        <key value="que-4"/>
-        <severity value="error"/>
-        <human value="A question must use either option or options, not both"/>
-        <xpath value="not(f:options and f:option)"/>
-      </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value=".outboundRelationship[typeCode=COMP].target[classCode=OBS, moodCode=EVN or DEF]"/>
-      </mapping>
-    </element>
-    <element>
-      <path value="Questionnaire.group.question.id"/>
-      <representation value="xmlAttr"/>
-      <short value="xml:id (or equivalent in JSON)"/>
-      <definition value="unique id for the element within a resource (for internal references)."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Questionnaire.group.question.id"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="id"/>
-      </type>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-    </element>
-    <element>
-      <path value="Questionnaire.group.question.extension"/>
-      <slicing>
-        <discriminator value="url"/>
-        <ordered value="false"/>
-        <rules value="open"/>
-      </slicing>
-      <short value="Additional Content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
-      <comments value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="Questionnaire.group.question.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-      </type>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-    </element>
-    <element>
-      <path value="Questionnaire.group.question.extension"/>
+      <path value="Questionnaire.item.extension"/>
       <name value="initialValue"/>
       <short value="An expression that provides the initial value for the answer to the question"/>
       <definition value="The name of an expression that determines the initial value for the answer to the question. This expression is evaluated once as part of displaying the form, and does not have access to the answers to other questions."/>
@@ -745,17 +588,17 @@
       <min value="0"/>
       <max value="1"/>
       <base>
-        <path value="Questionnaire.group.question.extension"/>
+        <path value="Questionnaire.item.extension"/>
         <min value="0"/>
         <max value="*"/>
       </base>
       <type>
         <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-expression"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-initialValue"/>
       </type>
     </element>
     <element>
-      <path value="Questionnaire.group.question.extension"/>
+      <path value="Questionnaire.item.extension"/>
       <name value="calculatedValue"/>
       <short value="An expression that provides a calculated value for the answer to the question"/>
       <definition value="The name of an expression that determines a calculated value for the answer to the question. The expression is evaluated as necessary and has access to the answers to other questions by the linkId of the question."/>
@@ -763,17 +606,17 @@
       <min value="0"/>
       <max value="1"/>
       <base>
-        <path value="Questionnaire.group.question.extension"/>
+        <path value="Questionnaire.item.extension"/>
         <min value="0"/>
         <max value="*"/>
       </base>
       <type>
         <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-expression"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-calculatedValue"/>
       </type>
     </element>
     <element>
-      <path value="Questionnaire.group.question.modifierExtension"/>
+      <path value="Questionnaire.item.modifierExtension"/>
       <short value="Extensions that cannot be ignored"/>
       <definition value="May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
       <comments value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
@@ -783,7 +626,7 @@
       <min value="0"/>
       <max value="*"/>
       <base>
-        <path value="Questionnaire.group.question.modifierExtension"/>
+        <path value="Questionnaire.item.modifierExtension"/>
         <min value="0"/>
         <max value="*"/>
       </base>
@@ -797,15 +640,15 @@
       </mapping>
     </element>
     <element>
-      <path value="Questionnaire.group.question.linkId"/>
+      <path value="Questionnaire.item.linkId"/>
       <short value="To link questionnaire with questionnaire response"/>
-      <definition value="An identifier that is unique within the questionnaire allowing linkage to the equivalent group in a [[[QuestionnaireResponse]]] resource."/>
-      <comments value="May be omitted if there is no expectation to link answers back to a questionnaire.  This *can* be a meaningful id (e.g. a LOINC code) but is not intended to have any meaning.  GUIDs or sequential numbers are appropriate here."/>
-      <requirements value="[[[QuestionnaireResponse]]] does not require omitted groups to be included and may have some groups that repeat, so linkage based on position alone is not sufficient."/>
+      <definition value="An identifier that is unique within the Questionnaire allowing linkage to the equivalent item in a QuestionnaireResponse resource."/>
+      <comments value="May be omitted if there is no expectation to link answers back to a Questionnaire.  This &#39;&#39;can&#39;&#39; be a meaningful identifier (e.g. a LOINC code) but is not intended to have any meaning.  GUIDs or sequential numbers are appropriate here."/>
+      <requirements value="[[[QuestionnaireResponse]]] does not require omitted items to be included and may have some items that repeat, so linkage based on position alone is not sufficient."/>
       <min value="0"/>
       <max value="1"/>
       <base>
-        <path value="Questionnaire.group.question.linkId"/>
+        <path value="Questionnaire.item.linkId"/>
         <min value="0"/>
         <max value="1"/>
       </base>
@@ -818,23 +661,26 @@
       </mapping>
     </element>
     <element>
-      <path value="Questionnaire.group.question.concept"/>
-      <short value="Concept that represents this question on a questionnaire"/>
-      <definition value="Identifies a how this question is known in a particular terminology such as LOINC."/>
-      <requirements value="Allows linking of questions (and their answers) to formal terminologies."/>
+      <path value="Questionnaire.item.concept"/>
+      <short value="Concept that represents this item within in a questionnaire"/>
+      <definition value="Identifies a how this group of questions is known in a particular terminology such as LOINC."/>
+      <comments value="The code(s) for the &quot;root&quot; group apply to the questionnaire as a whole."/>
+      <requirements value="Allows linking of groups of questions (and complete Questionnaire resources) to formal terminologies."/>
       <min value="0"/>
       <max value="*"/>
       <base>
-        <path value="Questionnaire.group.question.concept"/>
+        <path value="Questionnaire.item.concept"/>
         <min value="0"/>
         <max value="*"/>
       </base>
       <type>
         <code value="Coding"/>
       </type>
+      <condition value="que-3"/>
+      <isSummary value="true"/>
       <binding>
         <strength value="example"/>
-        <description value="Codes corresponding to individual questions"/>
+        <description value="Codes for questionnaires, groups and individual questions"/>
         <valueSetReference>
           <reference value="http://hl7.org/fhir/ValueSet/questionnaire-questions"/>
         </valueSetReference>
@@ -845,38 +691,36 @@
       </mapping>
     </element>
     <element>
-      <path value="Questionnaire.group.question.text"/>
-      <short value="Text of the question as it is shown to the user"/>
-      <definition value="The actual question as shown to the user to prompt them for an answer."/>
-      <comments value="Common extensions are defined for more specialized types of display text."/>
-      <requirements value="When including text for the questionnaire, each question may contain its actual question display text."/>
-      <alias value="Question"/>
+      <path value="Questionnaire.item.text"/>
+      <short value="Primary text for the item"/>
+      <definition value="The name of a section, the text of a question or text content for a text item."/>
       <min value="0"/>
       <max value="1"/>
       <base>
-        <path value="Questionnaire.group.question.text"/>
+        <path value="Questionnaire.item.text"/>
         <min value="0"/>
         <max value="1"/>
       </base>
       <type>
         <code value="string"/>
       </type>
+      <isSummary value="true"/>
       <mapping>
         <identity value="rim"/>
-        <map value=".code.display"/>
+        <map value=".text"/>
       </mapping>
     </element>
     <element>
-      <path value="Questionnaire.group.question.type"/>
-      <short value="boolean | decimal | integer | date | dateTime +"/>
-      <definition value="The expected format of the answer, e.g. the type of input (string, integer) or whether a (multiple) choice is expected."/>
+      <path value="Questionnaire.item.type"/>
+      <short value="group | display | boolean | decimal | integer | date | dateTime +"/>
+      <definition value="Identifies the type of questionnaire item this is - whether text for display, a grouping of other items or a particular type of data to be captured (string, integer, coded choice, etc.)."/>
       <comments value="Additional constraints on the type of answer can be conveyed by extensions."/>
       <requirements value="Defines the format in which the user is to be prompted for the answer."/>
-      <min value="0"/>
+      <min value="1"/>
       <max value="1"/>
       <base>
-        <path value="Questionnaire.group.question.type"/>
-        <min value="0"/>
+        <path value="Questionnaire.item.type"/>
+        <min value="1"/>
         <max value="1"/>
       </base>
       <type>
@@ -884,9 +728,9 @@
       </type>
       <binding>
         <strength value="required"/>
-        <description value="The expected format of an answer"/>
+        <description value="Distinguishes groups from questions and display text and indicates data type for questions"/>
         <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/answer-format"/>
+          <reference value="http://hl7.org/fhir/ValueSet/item-type"/>
         </valueSetReference>
       </binding>
       <mapping>
@@ -895,13 +739,13 @@
       </mapping>
     </element>
     <element>
-      <path value="Questionnaire.group.question.required"/>
-      <short value="Must question be answered in data results?"/>
-      <definition value="If true, indicates that the question must be answered and have required groups within it also present.  If false, the question and any contained groups may be skipped when answering the questionnaire."/>
+      <path value="Questionnaire.item.required"/>
+      <short value="Whether the group must be included in data results"/>
+      <definition value="If true, indicates that the item must be present in a &quot;completed&quot; QuestionnaireResponse.  If false, the item may be skipped when answering the questionnaire."/>
       <min value="0"/>
       <max value="1"/>
       <base>
-        <path value="Questionnaire.group.question.required"/>
+        <path value="Questionnaire.item.required"/>
         <min value="0"/>
         <max value="1"/>
       </base>
@@ -909,21 +753,21 @@
         <code value="boolean"/>
       </type>
       <defaultValueBoolean value="false"/>
+      <condition value="que-6"/>
       <mapping>
         <identity value="rim"/>
         <map value="Not supported - MIF/templating layer"/>
       </mapping>
     </element>
     <element>
-      <path value="Questionnaire.group.question.repeats"/>
-      <short value="Can question  have multiple answers?"/>
-      <definition value="If true, the question may have more than one answer."/>
-      <comments value="Whether the question itself will be displayed for each answer is a rendering choice typically based on whether there are nested groups."/>
-      <requirements value="Used for &quot;check all that apply&quot; types of questions or &quot;list your top 3&quot;, etc."/>
+      <path value="Questionnaire.item.repeats"/>
+      <short value="Whether the group may repeat"/>
+      <definition value="Whether the item may occur multiple times in the instance, containing multiple sets of answers."/>
+      <requirements value="Items may be used to create set of (related) questions that can be repeated to give multiple answers to such a set."/>
       <min value="0"/>
       <max value="1"/>
       <base>
-        <path value="Questionnaire.group.question.repeats"/>
+        <path value="Questionnaire.item.repeats"/>
         <min value="0"/>
         <max value="1"/>
       </base>
@@ -931,20 +775,21 @@
         <code value="boolean"/>
       </type>
       <defaultValueBoolean value="false"/>
+      <condition value="que-6"/>
       <mapping>
         <identity value="rim"/>
         <map value="Not supported - MIF/templating layer"/>
       </mapping>
     </element>
     <element>
-      <path value="Questionnaire.group.question.options"/>
+      <path value="Questionnaire.item.options"/>
       <short value="Valueset containing permitted answers"/>
-      <definition value="Reference to a valueset containing the a list of codes representing permitted answers for the question."/>
+      <definition value="Reference to a value set containing a list of codes representing permitted answers for the question."/>
       <comments value="LOINC defines many useful value sets for questionnaire response. See [LOINC Answer Lists](loinc.html#alist)."/>
       <min value="0"/>
       <max value="1"/>
       <base>
-        <path value="Questionnaire.group.question.options"/>
+        <path value="Questionnaire.item.options"/>
         <min value="0"/>
         <max value="1"/>
       </base>
@@ -953,19 +798,20 @@
         <profile value="http://hl7.org/fhir/StructureDefinition/ValueSet"/>
       </type>
       <condition value="que-4"/>
+      <condition value="que-5"/>
       <mapping>
         <identity value="rim"/>
         <map value="Not supported - MIF/templating layer to capture value set"/>
       </mapping>
     </element>
     <element>
-      <path value="Questionnaire.group.question.option"/>
+      <path value="Questionnaire.item.option"/>
       <short value="Permitted answer"/>
       <definition value="For a &quot;choice&quot; question, identifies one of the permitted answers for the question."/>
       <min value="0"/>
       <max value="*"/>
       <base>
-        <path value="Questionnaire.group.question.option"/>
+        <path value="Questionnaire.item.option"/>
         <min value="0"/>
         <max value="*"/>
       </base>
@@ -973,9 +819,10 @@
         <code value="Coding"/>
       </type>
       <condition value="que-4"/>
+      <condition value="que-5"/>
       <binding>
         <strength value="example"/>
-        <description value="Allowed values to answer questions"/>
+        <description value="Allowed values to answer questions."/>
         <valueSetReference>
           <reference value="http://hl7.org/fhir/ValueSet/questionnaire-answers"/>
         </valueSetReference>
@@ -986,21 +833,22 @@
       </mapping>
     </element>
     <element>
-      <path value="Questionnaire.group.question.group"/>
-      <short value="Nested questionnaire group"/>
-      <definition value="Nested group, containing nested question for this question. The order of groups within the question is relevant."/>
-      <requirements value="It is useful to have &quot;sub-questions&quot;, questions which normally appear when certain answers are given and which collect additional details."/>
+      <path value="Questionnaire.item.item"/>
+      <short value="Nested questionnaire items"/>
+      <definition value="Allows text, questions and other groups to be nested beneath a question or group."/>
+      <requirements value="Reports can consist of complex nested groups."/>
       <min value="0"/>
       <max value="*"/>
       <base>
-        <path value="Questionnaire.group.question.group"/>
+        <path value="Questionnaire.item.item"/>
         <min value="0"/>
         <max value="*"/>
       </base>
-      <nameReference value="group"/>
+      <nameReference value="item"/>
+      <condition value="que-1"/>
       <mapping>
         <identity value="rim"/>
-        <map value=".outboundRelationship[typeCode=COMP].target[classCode=DOCSECT, moodCode=EVN]"/>
+        <map value=".outboundRelationship[typeCode=COMP].target"/>
       </mapping>
     </element>
   </snapshot>
@@ -1018,31 +866,21 @@
     </element>
     <element>
       <path value="Questionnaire.extension"/>
-      <name value="content"/>
-      <slicing>
-        <discriminator value="url"/>
-        <ordered value="false"/>
-        <rules value="open"/>
-      </slicing>
-      <short value="An attachment containing any logic referenced by the questionnaire"/>
-      <definition value="A CQL or ELM attachment containing any logic referenced by the questionnaire."/>
-      <alias value="content"/>
+      <name value="library"/>
+      <short value="A library containing logic referenced by the questionnaire"/>
+      <definition value="A CQL or ELM library containing any logic referenced by the questionnaire."/>
+      <alias value="library"/>
       <type>
         <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-content"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-library"/>
       </type>
     </element>
     <element>
-      <path value="Questionnaire.group"/>
+      <path value="Questionnaire.item"/>
     </element>
     <element>
-      <path value="Questionnaire.group.extension"/>
+      <path value="Questionnaire.item.extension"/>
       <name value="condition"/>
-      <slicing>
-        <discriminator value="url"/>
-        <ordered value="false"/>
-        <rules value="open"/>
-      </slicing>
       <short value="A condition that determines whether or not the group is applicable"/>
       <definition value="The name of an expression that determines whether the group on which it appears is applicable. The expression is evaluated within the current context. If the result of evaluating the expression is true, the group is applicable. The expression has access to the current value of answered questions by the linkId of the question."/>
       <comments value="Note that per Lloyd this extension may not be necessary, it may be able to specified structurally using the elements already available within Questionnaire."/>
@@ -1051,20 +889,12 @@
       <max value="1"/>
       <type>
         <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-expression"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-condition"/>
       </type>
     </element>
     <element>
-      <path value="Questionnaire.group.question"/>
-    </element>
-    <element>
-      <path value="Questionnaire.group.question.extension"/>
+      <path value="Questionnaire.item.extension"/>
       <name value="initialValue"/>
-      <slicing>
-        <discriminator value="url"/>
-        <ordered value="false"/>
-        <rules value="open"/>
-      </slicing>
       <short value="An expression that provides the initial value for the answer to the question"/>
       <definition value="The name of an expression that determines the initial value for the answer to the question. This expression is evaluated once as part of displaying the form, and does not have access to the answers to other questions."/>
       <alias value="initialValue"/>
@@ -1072,11 +902,11 @@
       <max value="1"/>
       <type>
         <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-expression"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-initialValue"/>
       </type>
     </element>
     <element>
-      <path value="Questionnaire.group.question.extension"/>
+      <path value="Questionnaire.item.extension"/>
       <name value="calculatedValue"/>
       <short value="An expression that provides a calculated value for the answer to the question"/>
       <definition value="The name of an expression that determines a calculated value for the answer to the question. The expression is evaluated as necessary and has access to the answers to other questions by the linkId of the question."/>
@@ -1085,7 +915,7 @@
       <max value="1"/>
       <type>
         <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-expression"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-basic-calculatedValue"/>
       </type>
     </element>
   </differential>

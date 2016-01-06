@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="detectedissue-category"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Detected Issue Category</h2>
+      <p>Kinds of issues or contraindications, such as &#39;drug-drug interaction&#39;, &#39;duplicate therapy&#39;, etc.</p>
+      <p>This value set includes codes from the following code systems:</p>
+      <ul>
+        <li>Include codes from 
+          <a href="v3/ActCode/index.html">http://hl7.org/fhir/v3/ActCode</a> where concept  is-a  
+          <a href="v3/ActCode/index.html#_AdministrationDetectedIssueCode">_AdministrationDetectedIssueCode</a>
+        </li>
+        <li>Include codes from 
+          <a href="v3/ActCode/index.html">http://hl7.org/fhir/v3/ActCode</a> where concept  is-a  
+          <a href="v3/ActCode/index.html#_SupplyDetectedIssueCode">_SupplyDetectedIssueCode</a>
+        </li>
+      </ul>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.103"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/detectedissue-category"/>
+  <version value="1.1.0"/>
+  <name value="Detected Issue Category"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="FHIR Project team"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="Kinds of issues or contraindications, such as &#39;drug-drug interaction&#39;, &#39;duplicate therapy&#39;, etc."/>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/v3/ActCode"/>
+      <filter>
+        <property value="concept"/>
+        <op value="is-a"/>
+        <value value="_AdministrationDetectedIssueCode"/>
+      </filter>
+    </include>
+    <include>
+      <system value="http://hl7.org/fhir/v3/ActCode"/>
+      <filter>
+        <property value="concept"/>
+        <op value="is-a"/>
+        <value value="_SupplyDetectedIssueCode"/>
+      </filter>
+    </include>
+  </compose>
+</ValueSet>

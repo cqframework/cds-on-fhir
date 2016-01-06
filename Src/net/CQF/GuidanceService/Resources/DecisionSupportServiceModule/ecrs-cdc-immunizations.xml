@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DecisionSupportServiceModule xmlns="http://hl7.org/fhir">
+	<id value="ecrs-cdc-immunizations"/>
+	<text>
+		<status value="generated"/>
+		<div id="CDC Immunizations Service Module"/>
+	</text>
+	<contained>
+		<ModuleMetadata>
+			<id value="ecrs-cdc-immunizations-metadata"/>
+			<identifier>
+				<use id="official"/>
+				<value value="ecrs-cdc-immunizations"/>
+			</identifier>
+			<version value="1.0.0"/>
+			<title value="CDC Immunizations Service Module"/>
+			<type value="module"/>
+			<status value="draft"/>
+			<description value="CDC Immunizations Service Module"/>
+			<publicationDate value="2015-07-22"/>
+			<topic>
+				<text value="CDC Immunizations"/>
+			</topic>
+		</ModuleMetadata>
+	</contained>
+	<identifier>
+		<use id="official"/>
+		<value value="ecrs-cdc-immunizations"/>
+	</identifier>
+	<version value="1.0.0"/>
+	<moduleMetadata>
+		<reference value="#ecrs-cdc-immunizations-metadata"/>
+	</moduleMetadata>
+	<parameter>
+		<name value="PATIENT_XML"/>
+		<use value="in"/>
+		<type value="String"/>
+	</parameter>
+	<parameter>
+		<name value="CONSUMER_ID"/>
+		<use value="in"/>
+		<type value="String"/>
+	</parameter>
+	<parameter>
+		<name value="Data"/>
+		<use value="out"/>
+		<type value="String"/>
+	</parameter>
+</DecisionSupportServiceModule>

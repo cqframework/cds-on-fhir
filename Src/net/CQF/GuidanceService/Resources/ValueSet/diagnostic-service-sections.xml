@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="diagnostic-service-sections"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Diagnostic Service Section Codes</h2>
+      <p>This value set includes all the codes in HL7 v2 table 0074.</p>
+      <p>This value set includes codes from the following code systems:</p>
+      <ul>
+        <li>Include all codes defined in 
+          <a href="v2/0074/index.html">http://hl7.org/fhir/v2/0074</a>
+        </li>
+      </ul>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.117"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/diagnostic-service-sections"/>
+  <version value="1.1.0"/>
+  <name value="Diagnostic Service Section Codes"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="FHIR Project team"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="This value set includes all the codes in HL7 v2 table 0074."/>
+  <compose>
+    <include>
+    <!--    all codes    -->
+      <system value="http://hl7.org/fhir/v2/0074"/>
+    </include>
+  </compose>
+</ValueSet>

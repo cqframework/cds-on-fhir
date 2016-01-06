@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ModuleMetadata xmlns="http://hl7.org/fhir">
+	<id value="cms-price-check-metadata"/>
+	<identifier>
+	  <use value="official"/>
+	  <value value="cms-price-check"/>
+	</identifier>
+	<version value="1.0.0"/>
+	<title value="CMS Price Check - CDS Hooks Example Activity"/>
+	<type value="module"/>
+	<status value="draft"/>
+	<description value="This example demonstrates the use of the DecisionSupportServiceModule structure to represent a CDS-Hooks Activity."/>
+	<publicationDate value="2016-10-02"/>
+	<topic>
+		<text value="CMS Price Check"/>
+	</topic>
+	<keyword value="CMS Price Check"/>
+</ModuleMetadata>

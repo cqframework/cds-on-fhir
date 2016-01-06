@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="patient-contact-relationship"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>PatientContactRelationship</h2>
+      <p>This value set defines a set of codes that are used to indicate the nature of the relationship between a patient and a contactperson for that patient.</p>
+      <p>This value set has an inline code system http://hl7.org/fhir/patient-contact-relationship, which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>emergency
+            <a name="emergency"> </a>
+          </td>
+          <td>Emergency</td>
+          <td>Contact for use in case of emergency.</td>
+        </tr>
+        <tr>
+          <td>family
+            <a name="family"> </a>
+          </td>
+          <td>Family</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>guardian
+            <a name="guardian"> </a>
+          </td>
+          <td>Guardian</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>friend
+            <a name="friend"> </a>
+          </td>
+          <td>Friend</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>partner
+            <a name="partner"> </a>
+          </td>
+          <td>Partner</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>work
+            <a name="work"> </a>
+          </td>
+          <td>Work</td>
+          <td>Contact for matters related to the patients occupation/employment.</td>
+        </tr>
+        <tr>
+          <td>caregiver
+            <a name="caregiver"> </a>
+          </td>
+          <td>Caregiver</td>
+          <td>(Non)professional caregiver</td>
+        </tr>
+        <tr>
+          <td>agent
+            <a name="agent"> </a>
+          </td>
+          <td>Agent</td>
+          <td>Contact that acts on behalf of the patient</td>
+        </tr>
+        <tr>
+          <td>guarantor
+            <a name="guarantor"> </a>
+          </td>
+          <td>Guarantor</td>
+          <td>Contact for financial matters</td>
+        </tr>
+        <tr>
+          <td>owner
+            <a name="owner"> </a>
+          </td>
+          <td>Owner of animal</td>
+          <td>For animals, the owner of the animal</td>
+        </tr>
+        <tr>
+          <td>parent
+            <a name="parent"> </a>
+          </td>
+          <td>Parent</td>
+          <td>Parent of the patient</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.233"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/patient-contact-relationship"/>
+  <version value="1.1.0"/>
+  <name value="PatientContactRelationship"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="FHIR Project team"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="This value set defines a set of codes that are used to indicate the nature of the relationship between a patient and a contactperson for that patient."/>
+  <codeSystem>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+      <valueUri value="urn:oid:2.16.840.1.113883.4.642.1.233"/>
+    </extension>
+    <system value="http://hl7.org/fhir/patient-contact-relationship"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="emergency"/>
+      <display value="Emergency"/>
+      <definition value="Contact for use in case of emergency."/>
+    </concept>
+    <concept>
+      <code value="family"/>
+      <display value="Family"/>
+    </concept>
+    <concept>
+      <code value="guardian"/>
+      <display value="Guardian"/>
+    </concept>
+    <concept>
+      <code value="friend"/>
+      <display value="Friend"/>
+    </concept>
+    <concept>
+      <code value="partner"/>
+      <display value="Partner"/>
+    </concept>
+    <concept>
+      <code value="work"/>
+      <display value="Work"/>
+      <definition value="Contact for matters related to the patients occupation/employment."/>
+    </concept>
+    <concept>
+      <code value="caregiver"/>
+      <display value="Caregiver"/>
+      <definition value="(Non)professional caregiver"/>
+    </concept>
+    <concept>
+      <code value="agent"/>
+      <display value="Agent"/>
+      <definition value="Contact that acts on behalf of the patient"/>
+    </concept>
+    <concept>
+      <code value="guarantor"/>
+      <display value="Guarantor"/>
+      <definition value="Contact for financial matters"/>
+    </concept>
+    <concept>
+      <code value="owner"/>
+      <display value="Owner of animal"/>
+      <definition value="For animals, the owner of the animal"/>
+    </concept>
+    <concept>
+      <code value="parent"/>
+      <display value="Parent"/>
+      <definition value="Parent of the patient"/>
+    </concept>
+  </codeSystem>
+</ValueSet>

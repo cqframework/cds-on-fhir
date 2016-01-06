@@ -15,7 +15,7 @@
   </contact>
   <date value="2015-05-30"/>
   <description value="The quality of the evidence described. The code system used specifies the quality scale used to grade this evidence source while the code specifies the actual quality score (represented as a coded value) associated with this evidence reference."/>
-  <fhirVersion value="1.0.0"/>
+  <fhirVersion value="1.1.0"/>
   <kind value="datatype"/>
   <constrainedType value="Extension"/>
   <abstract value="false"/>

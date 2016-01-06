@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="supplydelivery-type"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Supply Item Type</h2>
+      <p>This value sets refers to a specific supply item.</p>
+      <p>This value set has an inline code system http://hl7.org/fhir/supply-item-type, which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>medication
+            <a name="medication"> </a>
+          </td>
+          <td>Medication</td>
+          <td>Supply is a kind of medication.</td>
+        </tr>
+        <tr>
+          <td>device
+            <a name="device"> </a>
+          </td>
+          <td>Device</td>
+          <td>What is supplied (or requested) is a device.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.356"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/supplydelivery-type"/>
+  <version value="1.1.0"/>
+  <name value="Supply Item Type"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="FHIR Project team"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="This value sets refers to a specific supply item."/>
+  <codeSystem>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+      <valueUri value="urn:oid:2.16.840.1.113883.4.642.1.356"/>
+    </extension>
+    <system value="http://hl7.org/fhir/supply-item-type"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="medication"/>
+      <display value="Medication"/>
+      <definition value="Supply is a kind of medication."/>
+    </concept>
+    <concept>
+      <code value="device"/>
+      <display value="Device"/>
+      <definition value="What is supplied (or requested) is a device."/>
+    </concept>
+  </codeSystem>
+</ValueSet>

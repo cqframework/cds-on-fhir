@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="encounter-type"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>EncounterType</h2>
+      <p>This example value set defines a set of codes that can be used to indicate the type of encounter: a specific code indicating type of service provided.</p>
+      <p>This value set has an inline code system http://hl7.org/fhir/encounter-type, which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>ADMS
+            <a name="ADMS"> </a>
+          </td>
+          <td>Annual diabetes mellitus screening</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>BD/BM-clin
+            <a name="BD.47BM-clin"> </a>
+          </td>
+          <td>Bone drilling/bone marrow punction in clinic</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>CCS60
+            <a name="CCS60"> </a>
+          </td>
+          <td>Infant colon screening - 60 minutes</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>OKI
+            <a name="OKI"> </a>
+          </td>
+          <td>Outpatient Kenacort injection</td>
+          <td/>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.137"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/encounter-type"/>
+  <version value="1.1.0"/>
+  <name value="EncounterType"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="FHIR Project team"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="This example value set defines a set of codes that can be used to indicate the type of encounter: a specific code indicating type of service provided."/>
+  <codeSystem>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+      <valueUri value="urn:oid:2.16.840.1.113883.4.642.1.137"/>
+    </extension>
+    <system value="http://hl7.org/fhir/encounter-type"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="ADMS"/>
+      <display value="Annual diabetes mellitus screening"/>
+    </concept>
+    <concept>
+      <code value="BD/BM-clin"/>
+      <display value="Bone drilling/bone marrow punction in clinic"/>
+    </concept>
+    <concept>
+      <code value="CCS60"/>
+      <display value="Infant colon screening - 60 minutes"/>
+    </concept>
+    <concept>
+      <code value="OKI"/>
+      <display value="Outpatient Kenacort injection"/>
+    </concept>
+  </codeSystem>
+</ValueSet>

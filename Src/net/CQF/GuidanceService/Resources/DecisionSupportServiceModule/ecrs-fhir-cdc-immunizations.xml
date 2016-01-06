@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DecisionSupportServiceModule xmlns="http://hl7.org/fhir">
+	<id value="ecrs-fhir-cdc-immunizations"/>
+	<text>
+		<status value="generated"/>
+		<div id="FHIR-ized CDC Immunizations Service Module"/>
+	</text>
+	<contained>
+		<ModuleMetadata>
+			<id value="ecrs-fhir-cdc-immunizations-metadata"/>
+			<identifier>
+				<use id="official"/>
+				<value value="ecrs-fhir-cdc-immunizations"/>
+			</identifier>
+			<version value="1.0.0"/>
+			<title value="FHIR-ized CDC Immunizations Service Module"/>
+			<type value="module"/>
+			<status value="draft"/>
+			<description value="FHIR-ized CDC Immunizations Service Module"/>
+			<publicationDate value="2015-07-22"/>
+			<topic>
+				<text value="CDC Immunizations"/>
+			</topic>
+		</ModuleMetadata>
+	</contained>
+	<identifier>
+		<use id="official"/>
+		<value value="ecrs-fhir-cdc-immunizations"/>
+	</identifier>
+	<version value="1.0.0"/>
+	<moduleMetadata>
+		<reference value="#ecrs-fhir-cdc-immunizations-metadata"/>
+	</moduleMetadata>
+	<parameter>
+		<name value="patient"/>
+		<use value="in"/>
+		<type value="Patient"/>
+	</parameter>
+	<parameter>
+		<name value="organization"/>
+		<use value="in"/>
+		<type value="Organization"/>
+	</parameter>
+	<parameter>
+		<use value="in"/>
+		<type value="Immunization"/>
+	</parameter>
+</DecisionSupportServiceModule>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="system-restful-interaction"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>SystemRestfulInteraction</h2>
+      <p>Operations supported by REST at the system level.</p>
+      <p>This value set includes codes from the following code systems:</p>
+      <ul>
+        <li>Include these codes as defined in http://hl7.org/fhir/restful-interaction
+          <table>
+            <tr>
+              <td>
+                <b>Code</b>
+              </td>
+              <td>
+                <b>Display</b>
+              </td>
+            </tr>
+            <tr>
+              <td>transaction</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>search-system</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>history-system</td>
+              <td/>
+              <td/>
+            </tr>
+          </table>
+        </li>
+      </ul>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.84"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/system-restful-interaction"/>
+  <version value="1.1.0"/>
+  <name value="SystemRestfulInteraction"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="Operations supported by REST at the system level."/>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/restful-interaction"/>
+      <concept>
+        <code value="transaction"/>
+      </concept>
+      <concept>
+        <code value="search-system"/>
+      </concept>
+      <concept>
+        <code value="history-system"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

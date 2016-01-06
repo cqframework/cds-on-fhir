@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="contract-actorrole"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Contract Actor Role Codes</h2>
+      <p>This value set includes sample Contract Actor Role codes.</p>
+      <p>
+        <b>Copyright Statement:</b> This is an example set.
+      </p>
+      <p>This value set has an inline code system http://www.hl7.org/fhir/contractactorrole, which defines the following codes:</p>
+      <table class="codes">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>practitioner
+            <a name="practitioner"> </a>
+          </td>
+          <td>Practitioner</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>patient
+            <a name="patient"> </a>
+          </td>
+          <td>Patient</td>
+          <td/>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.102"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/contract-actorrole"/>
+  <version value="1.1.0"/>
+  <name value="Contract Actor Role Codes"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="CBCC"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+  </contact>
+  <date value="2015-12-10T13:44:47-07:00"/>
+  <description value="This value set includes sample Contract Actor Role codes."/>
+  <copyright value="This is an example set."/>
+  <codeSystem>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+      <valueUri value="urn:oid:2.16.840.1.113883.4.642.1.102"/>
+    </extension>
+    <system value="http://www.hl7.org/fhir/contractactorrole"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="practitioner"/>
+      <display value="Practitioner"/>
+    </concept>
+    <concept>
+      <code value="patient"/>
+      <display value="Patient"/>
+    </concept>
+  </codeSystem>
+</ValueSet>

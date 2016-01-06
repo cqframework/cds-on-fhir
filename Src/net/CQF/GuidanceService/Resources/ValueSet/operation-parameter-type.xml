@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="operation-parameter-type"/>
+  <meta>
+    <lastUpdated value="2015-12-10T13:44:47.579-07:00"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/valueset-shareable-definition"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Parameter Types used in Operation Definitions</h2>
+      <p>Parameter Types used in Operation Definitions</p>
+      <p>This value set includes codes from the following code systems:</p>
+      <ul>
+        <li>Import all the codes that are contained in 
+          <a href="valueset-search-param-type.html">http://hl7.org/fhir/ValueSet/search-param-type</a>
+        </li>
+        <li>Import all the codes that are contained in 
+          <a href="valueset-defined-types.html">http://hl7.org/fhir/ValueSet/defined-types</a>
+        </li>
+      </ul>
+    </div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/valueset-oid">
+    <valueUri value="urn:oid:2.16.840.1.113883.4.642.2.299"/>
+  </extension>
+  <url value="http://hl7.org/fhir/ValueSet/operation-parameter-type"/>
+  <version value="1.1.0"/>
+  <name value="Parameter Types used in Operation Definitions"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="HL7, Inc. FHIR project"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <date value="2014-07-22"/>
+  <description value="Parameter Types used in Operation Definitions"/>
+  <extensible value="false"/>
+  <compose>
+  <!--    search parameters    -->
+    <import value="http://hl7.org/fhir/ValueSet/search-param-type"/>
+  <!--    FHIR data types & Resources    -->
+    <import value="http://hl7.org/fhir/ValueSet/defined-types"/>
+  </compose>
+</ValueSet>

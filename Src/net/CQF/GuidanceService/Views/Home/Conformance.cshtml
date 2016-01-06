@@ -9,14 +9,14 @@
             success: function (xml) {
                 $("#chart").empty();
 
-                $('<thead><tr><td>Resource</td><td>Implements</td></tr></thead>').appendTo("#chart");
+                $('<thead><tr><td><h2>Resources</h2></td></tr></thead>').appendTo("#chart");
 
                 $(xml).find('resource').each(function () {
                     var entity = $(this).find('type').attr("value");
 
                     var operations = "";
                     $(this).find("operation").each(function () {
-                        operations = operations + "<span>" + $(this).find("code").attr("value") + "</span>";
+                        operations = operations + "<span>" + $(this).find("name").attr("value") + "</span>";
                     });
 
                     

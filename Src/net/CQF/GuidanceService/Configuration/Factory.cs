@@ -26,23 +26,25 @@ namespace Spark.App
 
         public static Conformance GetSparkConformance()
         {
-            Conformance conformance = ConformanceBuilder.CreateServer("CDS-Spark", Info.Version, "ONC", fhirVersion: "0.5.0");
+            Conformance conformance = ConformanceBuilder.CreateServer("CDS-Spark", Info.Version, "ONC", fhirVersion: "1.2.0");
 
-			// Knowledge Modules
-			conformance.AddSingleResourceComponent
-			(
-				"OperationDefinition", 
-				false, 
-				true, 
-				Conformance.ResourceVersionPolicy.NoVersion, 
-				new ResourceReference { Reference = "/fhir/StructureDefinition/knowledgemodule-cqf-cqf-knowledgemodule" }
-			);
+            conformance.AddSingleResourceComponent("Basic", false, true, Conformance.ResourceVersionPolicy.NoVersion);
+            conformance.AddSingleResourceComponent("Conformance", false, false, Conformance.ResourceVersionPolicy.NoVersion);
+            conformance.AddSingleResourceComponent("DecisionSupportRule", false, true, Conformance.ResourceVersionPolicy.NoVersion);
+            conformance.AddSingleResourceComponent("DecisionSupportServiceModule", false, true, Conformance.ResourceVersionPolicy.NoVersion);
+            conformance.AddSingleResourceComponent("GuidanceResponse", false, true, Conformance.ResourceVersionPolicy.NoVersion);
+            conformance.AddSingleResourceComponent("Library", false, true, Conformance.ResourceVersionPolicy.NoVersion);
+            conformance.AddSingleResourceComponent("ModuleDefinition", false, true, Conformance.ResourceVersionPolicy.NoVersion);
+            conformance.AddSingleResourceComponent("ModuleMetadata", false, true, Conformance.ResourceVersionPolicy.NoVersion);
+            conformance.AddSingleResourceComponent("OperationDefinition", false, false, Conformance.ResourceVersionPolicy.NoVersion);
+            conformance.AddSingleResourceComponent("OrderSet", false, true, Conformance.ResourceVersionPolicy.NoVersion);
+            conformance.AddSingleResourceComponent("Parameters", false, true, Conformance.ResourceVersionPolicy.NoVersion);
+            conformance.AddSingleResourceComponent("Questionnaire", false, true, Conformance.ResourceVersionPolicy.NoVersion);
+            conformance.AddSingleResourceComponent("StructureDefinition", false, false, Conformance.ResourceVersionPolicy.NoVersion);
+            conformance.AddSingleResourceComponent("ValueSet", false, false, Conformance.ResourceVersionPolicy.NoVersion);
 
-			// Guidance Operation
-			conformance.AddOperation("guidance", new ResourceReference { Reference = "/fhir/OperationDefinition/Basic-guidance" });
-
-			// GuidanceRequirements Operation
-			conformance.AddOperation("guidanceRequirements", new ResourceReference { Reference = "/fhir/OperationDefinition/Basic-guidancerequirements" });
+            conformance.AddOperation("evaluate", new ResourceReference { Reference = "/fhir/OperationDefinition/decisionsupportrule-evaluate" });
+            conformance.AddOperation("evaluate", new ResourceReference { Reference = "/fhir/OperationDefinition/decisionsupportservicemodule-evaluate" });
 
             conformance.AcceptUnknown = Conformance.UnknownContentCode.Both;
             conformance.Experimental = true;
