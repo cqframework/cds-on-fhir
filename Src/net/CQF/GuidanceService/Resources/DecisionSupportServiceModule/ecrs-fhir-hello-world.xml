@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DecisionSupportServiceModule xmlns="http://hl7.org/fhir">
-	<id value="ecrs-hello-world"/>
+	<id value="ecrs-fhir-hello-world"/>
 	<text>
 		<status value="generated"/>
-		<div id="Hello World Service Module"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">FHIR-ized Hello World Service Module</div>
 	</text>
 	<contained>
 		<ModuleMetadata>
-			<id value="ecrs-hello-world-metadata"/>
+			<id value="ecrs-fhir-hello-world-metadata"/>
 			<identifier>
 				<use id="official"/>
-				<value value="ecrs-hello-world"/>
+				<value value="ecrs-fhir-hello-world"/>
 			</identifier>
 			<version value="1.0.0"/>
 			<title value="Hello World Service Module"/>
@@ -25,11 +25,11 @@
 	</contained>
 	<identifier>
 		<use id="official"/>
-		<value value="ecrs-hello-world"/>
+		<value value="ecrs-fhir-hello-world"/>
 	</identifier>
 	<version value="1.0.0"/>
 	<moduleMetadata>
-		<reference value="#ecrs-hello-world-metadata"/>
+		<reference value="#ecrs-fhir-hello-world-metadata"/>
 	</moduleMetadata>
 	<parameter>
 		<name value="PATIENT_XML"/>
@@ -39,11 +39,6 @@
 	<parameter>
 		<name value="CONSUMER_ID"/>
 		<use value="in"/>
-		<type value="String"/>
-	</parameter>
-	<parameter>
-		<name value="Data"/>
-		<use value="out"/>
 		<type value="String"/>
 	</parameter>
 </DecisionSupportServiceModule>

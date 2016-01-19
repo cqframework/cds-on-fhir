@@ -3,7 +3,7 @@
 	<id value="ecrs-fhir-cdc-immunizations"/>
 	<text>
 		<status value="generated"/>
-		<div id="FHIR-ized CDC Immunizations Service Module"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">FHIR-ized CDC Immunizations Service Module</div>
 	</text>
 	<contained>
 		<ModuleMetadata>
@@ -37,9 +37,9 @@
 		<type value="Patient"/>
 	</parameter>
 	<parameter>
-		<name value="organization"/>
+		<name value="organizationId"/>
 		<use value="in"/>
-		<type value="Organization"/>
+		<type value="Id"/>
 	</parameter>
 	<parameter>
 		<use value="in"/>

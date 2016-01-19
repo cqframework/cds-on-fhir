@@ -11,7 +11,7 @@
 				</parameter>
 				<parameter>
 					<name value="CONSUMER_ID"/>
-					<valueString value="FHIR_CONNECT_A_THON"/>
+					<valueId value="FHIR_CONNECT_A_THON"/>
 				</parameter>
 			</Parameters>
 		</resource>

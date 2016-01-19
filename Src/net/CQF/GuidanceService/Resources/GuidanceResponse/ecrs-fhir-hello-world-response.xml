@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GuidanceResponse xmlns="http://hl7.org/fhir">
+	<id value="661f621c-5457-4742-96fd-15bce521372b" />
+	<contained>
+		<CommunicationRequest>
+			<id value="d8fcf646-61d6-4b75-b81e-ec4c614b1d47" />
+			<payload>
+				<contentString value="Hello from ECRS" />
+			</payload>
+		</CommunicationRequest>
+	</contained>
+	<module>
+		<reference value="DecisionSupportServiceModule/ecrs-fhir-hello-world" />
+	</module>
+	<status value="success" />
+	<action>
+		<textEquivalent value="Hello from ECRS" />
+		<type value="create" />
+		<resource>
+			<reference value="#d8fcf646-61d6-4b75-b81e-ec4c614b1d47" />
+			<display value="Hello from ECRS" />
+		</resource>
+	</action>
+</GuidanceResponse>

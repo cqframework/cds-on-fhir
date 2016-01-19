@@ -198,6 +198,7 @@ namespace Spark.Controllers
         {
             switch(operation.ToLower())
             {
+				case "cds-hook": return Respond.WithResource(engine.CDSHook(parameters));
 				case "guidance": return Respond.WithResource(engine.Guidance(parameters));
                 case "error": throw new Exception("This error is for testing purposes");
                 default: return Respond.WithError(HttpStatusCode.NotFound, "Unknown operation");

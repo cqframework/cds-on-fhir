@@ -223,10 +223,19 @@
     <Content Include="Resources\DecisionSupportServiceModule\ecrs-cdc-immunizations.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\DecisionSupportServiceModule\ecrs-fhir-cdc-immunizations.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\DecisionSupportServiceModule\ecrs-fhir-hello-world.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\DecisionSupportServiceModule\ecrs-hello-world.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\DecisionSupportServiceModule\example.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\DecisionSupportServiceModule\gao-assessment.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\GuidanceResponse\cms-price-check-response-example.xml">
@@ -235,10 +244,26 @@
     <Content Include="Resources\GuidanceResponse\ecrs-cdc-immunizations-response.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\GuidanceResponse\ecrs-fhir-cdc-immunizations-incomplete-response.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuidanceResponse\ecrs-fhir-cdc-immunizations-malformed-response.xml" />
+    <Content Include="Resources\GuidanceResponse\ecrs-fhir-cdc-immunizations-response.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuidanceResponse\ecrs-fhir-cdc-immunizations-unauthorized-response.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuidanceResponse\ecrs-fhir-hello-world-response.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\GuidanceResponse\evaluate-operation-response-example.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\GuidanceResponse\ecrs-hello-world-response.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GuidanceResponse\gao-assessment-response.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Library\example.xml">
@@ -256,6 +281,12 @@
     <Content Include="Resources\ModuleMetadata\ecrs-cdc-immuinzations-metadata.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\ModuleMetadata\ecrs-fhir-cdc-immunizations-metadata.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ModuleMetadata\ecrs-fhir-hello-world-metadata.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\ModuleMetadata\ecrs-hello-world-metadata.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -269,6 +300,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\ModuleMetadata\example.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ModuleMetadata\gao-assessment-metadata.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\ModuleMetadata\mmi-low-suicide-risk-order-set-metadata.xml">
@@ -338,10 +372,28 @@
     <Content Include="Resources\Parameters\ecrs-cdc-immunizations-request.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Parameters\ecrs-fhir-cdc-immunizations-incomplete-request.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Parameters\ecrs-fhir-cdc-immunizations-malformed-request.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Parameters\ecrs-fhir-cdc-immunizations-request.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Parameters\ecrs-fhir-cdc-immunizations-unauthorized-request.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Parameters\ecrs-fhir-hello-world-request.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Parameters\evaluate-operation-request-example.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Parameters\ecrs-hello-world-request.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Parameters\gao-assessment-request.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Questionnaire\questionnaire-cqif-example.xml">

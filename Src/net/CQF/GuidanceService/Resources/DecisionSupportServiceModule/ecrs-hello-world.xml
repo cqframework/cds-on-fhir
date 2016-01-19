@@ -3,7 +3,7 @@
 	<id value="ecrs-hello-world"/>
 	<text>
 		<status value="generated"/>
-		<div id="Hello World Service Module"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">Hello World Service Module</div>
 	</text>
 	<contained>
 		<ModuleMetadata>

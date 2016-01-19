@@ -105,12 +105,12 @@ namespace GuidanceService.Store
 
 		public string NextResourceId(string resource)
 		{
-			throw new NotImplementedException();
+			return Guid.NewGuid().ToString();
 		}
 
 		public string NextVersionId(string resource)
 		{
-			throw new NotImplementedException();
+			return Guid.NewGuid().ToString();
 		}
 
 		public void AddSnapshot(Snapshot snapshot)
@@ -130,12 +130,13 @@ namespace GuidanceService.Store
 
 		public void Process(Interaction interaction)
 		{
-			throw new NotImplementedException();
+			// No index processing to do yet
 		}
 
 		public void Process(IEnumerable<Interaction> interactions)
 		{
-			throw new NotImplementedException();
+			foreach (var interaction in interactions)
+				Process(interaction);
 		}
 
 		public SearchResults Search(string resource, Hl7.Fhir.Rest.SearchParams searchCommand)

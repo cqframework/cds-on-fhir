@@ -9,6 +9,9 @@
 			</parameter>
 		</Parameters>
 	</contained>
+	<module>
+		<reference value="DecisionSupportServiceModule/ecrs-cdc-immunizations"/>
+	</module>
 	<status value="success"/>
 	<outputParameters>
 		<reference value="#outputParameters1"/>
